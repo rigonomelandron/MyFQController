@@ -13,4 +13,5 @@ import java.util.List;
 public interface CiclosAntibioticosRepo extends JpaRepository<CicloAntibiotico, Integer> {
     public List<CicloAntibiotico> findByDniPaciente(String dni);
     public List<CicloAntibiotico> findByDniPacienteAndFechaInicio(String dni, LocalDateTime fecha);
+    public List<CicloAntibiotico> findByEsIntravenosoTrue();
 }
