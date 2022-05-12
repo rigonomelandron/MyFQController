@@ -11,67 +11,80 @@
 </head>
 <body>
 <!-- Home -->
-<header class="bg-dark text-light text-center p-4">
-    <h1>Servidor REST</h1>
-    <h3>RestController de usuarios</h3>
+<header class="bg-info text-light text-center p-4">
+    <h1>MyFQController</h1>
+    <h3>API V1</h3>
 </header>
 
 <div class="container">
-    <table class="table table-bordered shadow mt-4">
-        <tr>
-            <th>URL</th>
-            <th>Prueba</th>
-            <th>Ubicación</th>
-            <th>Descripción</th>
-        </tr>
-        <tr>
-            <td>/api/usuarios</td>
-            <td><a class="btn btn-primary" href="/api/usuarios">/api/usuarios</a></td>
-            <td>APIController</td>
-            <td>Devuelve todos los usuarios</td>
-        </tr>
-        <tr>
-            <td>/api/usuario/id/{id}</td>
-            <td><a class="btn btn-primary" href="/api/usuario/id/5">/api/usuario/id/5</a></td>
-            <td>APIController</td>
-            <td>Devuelve el usuario cuya id es 5</td>
-        </tr>
-        <tr>
-            <td>/api/usuario/email/{email}</td>
-            <td><a class="btn btn-primary" href="/api/usuario/email/prueba3@correo.com">/api/usuario/email/prueba3@correo.com</a></td>
-            <td>APIController</td>
-            <td>Devuelve el usuario cuyo correo es 'prueba3@correo.com'</td>
-        </tr>
-        <tr>
-            <td>/api/usuarios/email/{email}</td>
-            <td><a class="btn btn-primary" href="/api/usuarios/email/prueba">/api/usuarios/email/prueba</a></td>
-            <td>APIController</td>
-            <td>Devuelve los usuarios cuyo correo empiece por 'prueba'</td>
-        </tr>
-
-        <tr>
-            <td>/crear/usuarios/{numero}</td>
-            <td><a class="btn btn-primary" href="/crear/usuarios/5">/crear/usuarios/5</a></td>
-            <td>HomeController</td>
-            <td>Vacía la lista, y la rellena con n usuarios.</td>
-        </tr>
-        <tr>
-            <td>/crear/usuario/{email}</td>
-            <td><a class="btn btn-primary" href="/crear/usuario/usuario@test.com">/crear/usuario/usuario@test.com</a></td>
-            <td>HomeController</td>
-            <td>Crea un usuario con el email recibido y lo añade a la lista</td>
-        </tr>
-    </table>
-</div>
-
-
-<div class="container">
-    <div th:if="${mensaje!=null}" class="alert alert-success">
-        <span>[[${mensaje}]]</span>
-        <code>[[${userCreado}]]</code>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table class="table table-bordered shadow mt-4">
+                <tr>
+                    <th>URL</th>
+                    <th>Prueba</th>
+                    <th>Tabla</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>/api/v1/equipos</td>
+                    <td><a class="btn btn-info" href="/api/v1/equipos">/api/v1/equipos</a></td>
+                    <td>Equipos</td>
+                    <td>Devuelve todos los equipos</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/equipos/id/{id}</td>
+                    <td><a class="btn btn-info" href="/api/v1/equipos/id/1">/api/v1/equipos/id/1</a></td>
+                    <td>Equipos</td>
+                    <td>Devuelve el equipo cuya id es 1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table class="table table-bordered shadow mt-4">
+                <tr>
+                    <th>URL</th>
+                    <th>Prueba</th>
+                    <th>Tabla</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>/api/v1/antecedentes</td>
+                    <td><a class="btn btn-info" href="/api/v1/antecedentes">/api/v1/antecedentes</a></td>
+                    <td>Antecedentes</td>
+                    <td>Devuelve todos los equipos</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/antecedentes/{dni}</td>
+                    <td><a class="btn btn-info" href="/api/v1/antecedentes/dni/012345678M">/api/v1/antecedentes/012345678M</a></td>
+                    <td>Antecedentes</td>
+                    <td>Devuelve los antecedentes cuyo usuario tiene el dni 012345678M</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/antecedentes/{dni}}/{fecha}</td>
+                    <td><a class="btn btn-info" href="/api/v1/antecedentes/dni/012345678M/XXXXX">/api/v1/antecedentes/012345678M/XXXXX</a></td>
+                    <td>Antecedentes</td>
+                    <td>Devuelve los antecedentes cuyo usuario tiene el dni 012345678M y la fecha es XXXXX</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/equipos/id/{id}</td>
+                    <td><a class="btn btn-info" href="/api/v1/antecedentes/id/1">/api/v1/equipos/id/1</a></td>
+                    <td>Antecedentes</td>
+                    <td>Devuelve el antecedente cuya id es 1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-1"></div>
     </div>
 </div>
-
+<footer class="container-fluid bg-info text-light p-1 mt-5">
+    <p>2022' (c)</p>
+</footer>
 
 <!-- Bootstrap Javascript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

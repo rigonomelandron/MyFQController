@@ -2,6 +2,7 @@ package com.inserta.myfqcontroller.controllers;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,8 +16,8 @@ public class HomeController {
         return "login";
     }
 
-    @PostMapping("/validar")
-    public String inicioSesion(@RequestParam String user,@RequestParam String pass){
+    @GetMapping("/validar")
+    public String inicioSesion(){
 
         return "home";
     }
