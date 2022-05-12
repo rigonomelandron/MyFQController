@@ -16,7 +16,7 @@ public class HomeController {
         return "login";
     }
 
-    @GetMapping("/validar")
+    @PostMapping("/validar")
     public String inicioSesion(){
 
         return "home";
