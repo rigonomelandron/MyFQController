@@ -19,6 +19,8 @@ public class Tension {
     private LocalDateTime fecha;
     @Column(nullable = false)
     private String dniPaciente;
+    @Column(nullable = true)
     private int maxTension;
+    @Column(nullable = true)
     private int minTension;
 }

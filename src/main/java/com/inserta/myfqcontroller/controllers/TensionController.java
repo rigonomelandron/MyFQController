@@ -36,9 +36,11 @@ public class TensionController {
 
     }
 
-    @GetMapping("/tension/dniFecha/{dni}/{fecha}")
+    @GetMapping("/tension/dnifecha/{dni}/{fecha}")
 
-    public List<Tension> deporteByUserFecha(@PathVariable String dni, @PathVariable LocalDateTime fecha){
-        return tensionService.tensionByDniFecha(dni, fecha);
+    public List<Tension> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
+
+        LocalDateTime fechaActual = LocalDateTime.parse(fecha);
+        return tensionService.tensionByDniFecha(dni, fechaActual);
     }
 }
