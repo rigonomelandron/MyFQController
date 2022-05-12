@@ -12,6 +12,12 @@ public class UsuariosServicesImpl implements  UsuariosService{
 
     @Autowired
     private UsuariosRepos usuariosRepos;
+
+    @Override
+    public Usuario usuarioById(String usuario) {
+        return usuariosRepos.findById(usuario).orElse(null);
+    }
+
     @Override
     public List<Usuario> listado() {
         return usuariosRepos.findAll();
