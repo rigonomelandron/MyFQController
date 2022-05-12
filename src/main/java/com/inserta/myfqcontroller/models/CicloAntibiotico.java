@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "ciclosantibioticos")
+@Table(name = "ciclos_antibioticos")
 public class CicloAntibiotico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

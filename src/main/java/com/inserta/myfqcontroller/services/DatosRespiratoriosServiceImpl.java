@@ -3,10 +3,12 @@ package com.inserta.myfqcontroller.services;
 import com.inserta.myfqcontroller.models.DatoRespiratorio;
 import com.inserta.myfqcontroller.repos.DatosRespiratoriosRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Service
 public class DatosRespiratoriosServiceImpl implements DatosRespiratoriosService{
 
     @Autowired
