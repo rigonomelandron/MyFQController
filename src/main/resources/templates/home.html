@@ -119,6 +119,44 @@
         </div>
         <div class="col"></div>
     </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-12">
+            <table class="table table-bordered shadow mt-4">
+                <tr>
+                    <th>URL</th>
+                    <th>Prueba</th>
+                    <th>Tabla</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>/api/v1/datos-respiratorios</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/datos-respiratorios">/api/v1/datos-respiratorios</a></td>
+                    <td>Datos Respiratorios</td>
+                    <td>Devuelve todos los Datos Respiratorios</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/datos-respiratorios/{dni}</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/datos-respiratorios/dni/012345678M">/api/v1/datos-respiratorios/012345678M</a></td>
+                    <td>Datos Respiratorios</td>
+                    <td>Devuelve los datos respiratorios cuyo usuario tiene el dni 012345678M</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/datos-respiratorios/{dni}}/{fecha}</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/datos-respiratorios/dni/012345678M/XXXXX">/api/v1/datos-respiratorios/012345678M/XXXXX</a></td>
+                    <td>Datos Respiratorios</td>
+                    <td>Devuelve los datos respiratorios cuyo usuario tiene el dni 012345678M y la fecha es XXXXX</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/datos-respiratorios/id/{id}</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/datos-respiratorios/id/1">/api/v1/datos-respiratorios/id/1</a></td>
+                    <td>Datos Respiratorios</td>
+                    <td>Devuelve el dato respiratorio cuya id es 1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
 </div>
 <footer class="container-fluid bg-info text-light p-1 mt-5">
     <p>2022' (c)</p>
