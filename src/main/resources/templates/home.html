@@ -18,8 +18,8 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col"></div>
+        <div class="col-12">
             <table class="table table-bordered shadow mt-4">
                 <tr>
                     <th>URL</th>
@@ -29,23 +29,23 @@
                 </tr>
                 <tr>
                     <td>/api/v1/equipos</td>
-                    <td><a class="btn btn-info" href="/api/v1/equipos">/api/v1/equipos</a></td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/equipos">/api/v1/equipos</a></td>
                     <td>Equipos</td>
                     <td>Devuelve todos los equipos</td>
                 </tr>
                 <tr>
                     <td>/api/v1/equipos/id/{id}</td>
-                    <td><a class="btn btn-info" href="/api/v1/equipos/id/1">/api/v1/equipos/id/1</a></td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/equipos/id/1">/api/v1/equipos/id/1</a></td>
                     <td>Equipos</td>
                     <td>Devuelve el equipo cuya id es 1</td>
                 </tr>
             </table>
         </div>
-        <div class="col-1"></div>
+        <div class="col"></div>
     </div>
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col"></div>
+        <div class="col-12">
             <table class="table table-bordered shadow mt-4">
                 <tr>
                     <th>URL</th>
@@ -55,31 +55,69 @@
                 </tr>
                 <tr>
                     <td>/api/v1/antecedentes</td>
-                    <td><a class="btn btn-info" href="/api/v1/antecedentes">/api/v1/antecedentes</a></td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/antecedentes">/api/v1/antecedentes</a></td>
                     <td>Antecedentes</td>
-                    <td>Devuelve todos los equipos</td>
+                    <td>Devuelve todos los antecedentes</td>
                 </tr>
                 <tr>
                     <td>/api/v1/antecedentes/{dni}</td>
-                    <td><a class="btn btn-info" href="/api/v1/antecedentes/dni/012345678M">/api/v1/antecedentes/012345678M</a></td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/antecedentes/dni/012345678M">/api/v1/antecedentes/012345678M</a></td>
                     <td>Antecedentes</td>
                     <td>Devuelve los antecedentes cuyo usuario tiene el dni 012345678M</td>
                 </tr>
                 <tr>
                     <td>/api/v1/antecedentes/{dni}}/{fecha}</td>
-                    <td><a class="btn btn-info" href="/api/v1/antecedentes/dni/012345678M/XXXXX">/api/v1/antecedentes/012345678M/XXXXX</a></td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/antecedentes/dni/012345678M/XXXXX">/api/v1/antecedentes/012345678M/XXXXX</a></td>
                     <td>Antecedentes</td>
                     <td>Devuelve los antecedentes cuyo usuario tiene el dni 012345678M y la fecha es XXXXX</td>
                 </tr>
                 <tr>
                     <td>/api/v1/equipos/id/{id}</td>
-                    <td><a class="btn btn-info" href="/api/v1/antecedentes/id/1">/api/v1/equipos/id/1</a></td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/antecedentes/id/1">/api/v1/equipos/id/1</a></td>
                     <td>Antecedentes</td>
                     <td>Devuelve el antecedente cuya id es 1</td>
                 </tr>
             </table>
         </div>
-        <div class="col-1"></div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-12">
+            <table class="table table-bordered shadow mt-4">
+                <tr>
+                    <th>URL</th>
+                    <th>Prueba</th>
+                    <th>Tabla</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>/api/v1/ciclos-antibiotico</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico">/api/v1/ciclos-antibiotico</a></td>
+                    <td>Ciclos de Antibiótico</td>
+                    <td>Devuelve todos los ciclos de antibiótico</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/ciclos-antibiotico/{dni}</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico/dni/012345678M">/api/v1/ciclos-antibiotico/012345678M</a></td>
+                    <td>Ciclos de Antibiótico</td>
+                    <td>Devuelve los ciclos de antibiótico cuyo usuario tiene el dni 012345678M</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/ciclos-antibiotico/{dni}}/{fecha}</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico/dni/012345678M/XXXXX">/api/v1/ciclos-antibiotico/012345678M/XXXXX</a></td>
+                    <td>Ciclos de Antibiótico</td>
+                    <td>Devuelve los ciclos de antibiótico cuyo usuario tiene el dni 012345678M y la fecha es XXXXX</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/ciclos-antibiotico/id/{id}</td>
+                    <td><a class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico/id/1">/api/v1/ciclos-antibiotico/id/1</a></td>
+                    <td>Ciclos de Antibiótico</td>
+                    <td>Devuelve el ciclo de antibiótico cuya id es 1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col"></div>
     </div>
 </div>
 <footer class="container-fluid bg-info text-light p-1 mt-5">
