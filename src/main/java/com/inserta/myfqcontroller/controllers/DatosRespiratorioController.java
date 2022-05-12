@@ -30,8 +30,9 @@ public class DatosRespiratorioController {
     }
 
     @GetMapping("/datos-respiratorios/dni/{dni}/{fecha}")
-    public List<DatoRespiratorio> getDatosRespiratoriosByDni(@PathVariable String dni, @PathVariable LocalDateTime fecha){
-        return datosRespiratoriosService.getDatosRespiratoriosByDniAndFecha(dni, fecha);
+    public List<DatoRespiratorio> getDatosRespiratoriosByDni(@PathVariable String dni, @PathVariable String fecha){
+        LocalDateTime fechaI = LocalDateTime.parse(fecha);
+        return datosRespiratoriosService.getDatosRespiratoriosByDniAndFecha(dni, fechaI);
     }
 
     @GetMapping("/datos-respiratorios/id/{id}")

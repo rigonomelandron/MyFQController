@@ -31,8 +31,9 @@ public class CiclosAntibioticoController {
     }
 
     @GetMapping("/ciclos-antibiotico/dni/{dni}/{fecha}")
-    public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni, @PathVariable LocalDateTime fecha){
-        return ciclosAntibioticoService.getCiclosAntibioticoByDniAndFechaInicio(dni, fecha);
+    public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni, @PathVariable String fecha){
+        LocalDateTime fechaI = LocalDateTime.parse(fecha);
+        return ciclosAntibioticoService.getCiclosAntibioticoByDniAndFechaInicio(dni, fechaI);
     }
 
     @GetMapping("/ciclos-antibiotico/intravenosos")

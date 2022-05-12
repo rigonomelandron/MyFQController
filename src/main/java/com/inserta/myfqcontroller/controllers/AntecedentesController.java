@@ -30,8 +30,9 @@ public class AntecedentesController {
     }
 
     @GetMapping("/antecedentes/dni/{dni}/{fecha}")
-    public List<Antecedente> getAntecedentesByDniAndFecha(@PathVariable String dni, @PathVariable LocalDateTime fecha){
-        return antecedentesService.getAntecedentesByDniAndFecha(dni, fecha);
+    public List<Antecedente> getAntecedentesByDniAndFecha(@PathVariable String dni, @PathVariable String fecha){
+        LocalDateTime fechaI = LocalDateTime.parse(fecha);
+        return antecedentesService.getAntecedentesByDniAndFecha(dni, fechaI);
     }
     @GetMapping("/antecedentes/id/{id}")
     public Antecedente getAntecedentesById(@PathVariable String id){
