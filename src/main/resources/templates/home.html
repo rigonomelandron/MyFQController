@@ -157,6 +157,200 @@
         </div>
         <div class="col"></div>
     </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-12">
+            <table class="table table-bordered shadow mt-4">
+                <tr>
+                    <th>URL</th>
+                    <th>Prueba</th>
+                    <th>Tabla</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>/api/v1/usuarios/listado</td>
+                    <td><a class="btn btn-primary" href="/api/v1/usuarios/listado">/api/v1/usuarios/listado</a></td>
+                    <td>Usuarios</td>
+                    <td>Devuelve todos los usuarios</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/usuarios/user/{user}</td>
+                    <td><a class="btn btn-primary" href="/api/v1/usuarios/user/paco">/api/v1/usuario/user/paco</a></td>
+                    <td>Usuarios</td>
+                    <td>Devuelve el usuario cuyo username es paco</td>
+                </tr>
+                <tr>
+                    <td>/api/v1/usuarios/userPass/{usuario}/{pass}</td>
+                    <td><a class="btn btn-primary" href="/api/v1/usuarios/userPass/paco/1234">/api/v1/usuarios/userPass/{paco}/{1234}</a></td>
+                    <td>Usuarios</td>
+                    <td>Devuelve los usuarios por username y password</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12">
+                <table class="table table-bordered shadow mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/tratamientos/listado</td>
+                        <td><a class="btn btn-primary" href="/api/v1/tratamientos/listado">/api/v1/tratamientos/listado</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve todos los tratamientos</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/v1/tratamientos/id/{id}</td>
+                        <td><a class="btn btn-primary" href="/api/v1/tratamientos/id/1">/api/v1//tratamientos/id/1</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve los tratamientos crónicos por id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/tratamientos/dni/{dni}</td>
+                        <td><a class="btn btn-primary" href="/api/v1/tratamientos/dni/31646637v">/api/v1/tratamientos/dni/31646637v</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve tratamientos por id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/tratamientos/dniFecha/{dni}/{fecha}"</td>
+                        <td><a class="btn btn-primary" href="/api/v1/tratamientos/dniFecha/31646637v/2022-05-12T00:00:00">/api/v1/tratamientos/dniFecha/31646637v/2022-05-12T00:00:00"</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve tratamiento por dni y fecha</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="col"></div>
+        <div class="row">
+                <div class="col"></div>
+                <div class="col-12">
+                    <table class="table table-bordered shadow mt-4">
+                        <tr>
+                            <th>URL</th>
+                            <th>Prueba</th>
+                            <th>Tabla</th>
+                            <th>Descripción</th>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/listado</td>
+                            <td><a class="btn btn-primary" href="/api/v1/tension/listado">/api/v1/tension/listado</a></td>
+                            <td>TensionController</td>
+                            <td>Devuelve las tensiones</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/id/{id}</td>
+                            <td><a class="btn btn-primary" href="/api/v1/tension/id/1">/api/v1/tension/id/1</a></td>
+                            <td>TensionController</td>
+                            <td>Devuelve tensión por id</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/dni/{dni}</td>
+                            <td><a class="btn btn-primary" href="/api/v1/tension/dni/31646637v">/api/v1/tension/dni/31646637v</a></td>
+                            <td>Tension</td>
+                            <td>Devuelve las tensiones por dni</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/dniFecha/{dni}/{fecha}"</td>
+                            <td><a class="btn btn-primary" href="/api/v1/tension/dniFecha/31646637v/2022-05-12T00:00:00">/api/v1/tension/dnifecha/31646637v/2022-05-12T00:00:00"</a></td>
+                            <td>Tension</td>
+                            <td>Devuelve las tensiones por dni y fecha</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col"></div>
+            </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-12">
+                        <table class="table table-bordered shadow mt-4">
+                            <tr>
+                                <th>URL</th>
+                                <th>Prueba</th>
+                                <th>Tabla</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>/api/v1/deportes/listado</td>
+                                <td><a class="btn btn-primary" href="/api/v1/deportes/listado">/api/v1/deportes/listado</a></td>
+                                <td>deportes</td>
+                                <td>Devuelve listado deportes</td>
+                            </tr>
+                            <tr>
+                                <td>/api/v1/deportes/id/{id}</td>
+                                <td><a class="btn btn-primary" href="/api/v1/deportes/id/1">/api/v1/deportes/id/1</a></td>
+                                <td>deportes</td>
+                                <td>Devuelve deportes id</td>
+                            </tr>
+                            <tr>
+                                <td>/api/v1/deportes/dni/{dni}</td>
+                                <td><a class="btn btn-primary" href="/api/v1/deportes/dni/31646637v">/api/v1/deportes/dni/31646637v</a></td>
+                                <td>deportes</td>
+                                <td>Devuelve deportes por dni</td>
+                            </tr>
+                            <tr>
+                                <td>/api/v1/deportes/dniFecha/{dni}/{fecha}"</td>
+                                <td><a class="btn btn-primary" href="/api/v1/deportes/dniFecha/31646637v/2022-05-12T00:00:00">/api/v1/deportes/dnifecha/31646637v/2022-05-12T00:00:00"</a></td>
+                                <td>deportes</td>
+                                <td>Devuelve deportes por dni y fecha</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <div class="col"></div>
+                </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-12">
+                    <table class="table table-bordered shadow mt-4">
+                        <tr>
+                            <th>URL</th>
+                            <th>Prueba</th>
+                            <th>Tabla</th>
+                            <th>Descripción</th>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/v02max/listado</td>
+                            <td><a class="btn btn-primary" href="/api/v1/v02max/listado">/api/v1/v02max/listado</a></td>
+                            <td>v02max</td>
+                            <td>Devuelve listado v02max</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/v02max/id/{id}</td>
+                            <td><a class="btn btn-primary" href="/api/v1/v02max/id/1">/api/v1/v02max/id/1</a></td>
+                            <td>v02max</td>
+                            <td>Devuelve v02max id</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/v02max/dni/{dni}</td>
+                            <td><a class="btn btn-primary" href="/api/v1/v02max/dni/31646637v">/api/v1/v02max/dni/31646637v</a></td>
+                            <td>v02max</td>
+                            <td>Devuelve v02max por dni</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/v02max/dniFecha/{dni}/{fecha}"</td>
+                            <td><a class="btn btn-primary" href="/api/v1/v02max/dniFecha/31646637v/2022-05-12T00:00:00">/api/v1/v02max/dnifecha/31646637v/2022-05-12T00:00:00"</a></td>
+                            <td>v02max</td>
+                            <td>Devuelve v02max por dni y fecha</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="col"></div>
+            </div>
+
+
+    </div>
 </div>
 <footer class="container-fluid bg-info text-light p-1 mt-5">
     <p>2022' (c)</p>

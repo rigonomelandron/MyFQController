@@ -36,7 +36,7 @@ public class TensionController {
 
     }
 
-    @GetMapping("/tension/dnifecha/{dni}/{fecha}")
+    @GetMapping("/tension/dniFecha/{dni}/{fecha}")
 
     public List<Tension> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
 
