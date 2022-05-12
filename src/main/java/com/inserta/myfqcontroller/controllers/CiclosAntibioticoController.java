@@ -25,12 +25,12 @@ public class CiclosAntibioticoController {
         return ciclosAntibioticoService.getCiclosAntibiotico();
     }
 
-    @GetMapping("/ciclos-antibiotico/{dni}")
+    @GetMapping("/ciclos-antibiotico/dni/{dni}")
     public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni){
         return ciclosAntibioticoService.getCiclosAntibioticoByDni(dni);
     }
 
-    @GetMapping("/ciclos-antibiotico/{dni}/{fecha}")
+    @GetMapping("/ciclos-antibiotico/dni/{dni}/{fecha}")
     public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni, @PathVariable LocalDateTime fecha){
         return ciclosAntibioticoService.getCiclosAntibioticoByDniAndFechaInicio(dni, fecha);
     }
@@ -40,7 +40,7 @@ public class CiclosAntibioticoController {
         return ciclosAntibioticoService.getCiclosAntibioticoByEsIntravenosoTrue();
     }
 
-    @GetMapping("/ciclos-antibiotico/{id}")
+    @GetMapping("/ciclos-antibiotico/id/{id}")
     public CicloAntibiotico getCicloAntibioticoById(@PathVariable String id){
         Integer idI = Integer.valueOf(id);
         return ciclosAntibioticoService.getCiclosAntibioticoById(idI);

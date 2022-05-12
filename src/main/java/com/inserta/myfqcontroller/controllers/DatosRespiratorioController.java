@@ -24,17 +24,17 @@ public class DatosRespiratorioController {
         return datosRespiratoriosService.getDatosRespiratorios();
     }
 
-    @GetMapping("/datos-respiratorios/{dni}")
+    @GetMapping("/datos-respiratorios/dni/{dni}")
     public List<DatoRespiratorio> getDatosRespiratoriosByDni(@PathVariable String dni){
         return datosRespiratoriosService.getDatosRespiratorios();
     }
 
-    @GetMapping("/datos-respiratorios/{dni}/{fecha}")
+    @GetMapping("/datos-respiratorios/dni/{dni}/{fecha}")
     public List<DatoRespiratorio> getDatosRespiratoriosByDni(@PathVariable String dni, @PathVariable LocalDateTime fecha){
         return datosRespiratoriosService.getDatosRespiratoriosByDniAndFecha(dni, fecha);
     }
 
-    @GetMapping("/datos-respiratorios/{id}")
+    @GetMapping("/datos-respiratorios/id/{id}")
     public DatoRespiratorio getDatosRespiratoriosById(@PathVariable String id){
         Integer idI = Integer.valueOf(id);
         return datosRespiratoriosService.getDatoRespiratorioById(idI);

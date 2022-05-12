@@ -23,7 +23,7 @@ public class EquiposController {
         return equiposService.getEquipos();
     }
 
-    @GetMapping("/equipos/{id}")
+    @GetMapping("/equipos/id/{id}")
     public Equipo getEquiposById(@PathVariable String id){
         Integer idI = Integer.valueOf(id);
         return equiposService.getEquiposById(idI);

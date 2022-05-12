@@ -24,16 +24,16 @@ public class AntecedentesController {
         return antecedentesService.getAntecedentes();
     }
 
-    @GetMapping("/antecedentes/{dni}")
+    @GetMapping("/antecedentes/dni/{dni}")
     public List<Antecedente> getAntecedentesByDni(@PathVariable String dni){
         return antecedentesService.getAntecedentesByDni(dni);
     }
 
-    @GetMapping("/antecedentes/{dni}/{fecha}")
+    @GetMapping("/antecedentes/dni/{dni}/{fecha}")
     public List<Antecedente> getAntecedentesByDniAndFecha(@PathVariable String dni, @PathVariable LocalDateTime fecha){
         return antecedentesService.getAntecedentesByDniAndFecha(dni, fecha);
     }
-    @GetMapping("/antecedentes/{id}")
+    @GetMapping("/antecedentes/id/{id}")
     public Antecedente getAntecedentesById(@PathVariable String id){
         Integer idI = Integer.valueOf(id);
         return antecedentesService.getAntecedenteById(idI);
