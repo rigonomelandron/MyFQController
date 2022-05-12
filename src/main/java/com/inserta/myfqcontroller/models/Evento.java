@@ -18,7 +18,7 @@ public class Evento {
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime fecha;
     @Column(nullable = false)
-    private String dni_paciente;
+    private String dniPaciente;
     private String descripcion;
     private int importancia;
 }
