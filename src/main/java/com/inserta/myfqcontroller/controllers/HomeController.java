@@ -2,7 +2,9 @@ package com.inserta.myfqcontroller.controllers;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -11,5 +13,11 @@ public class HomeController {
     @RequestMapping("/")
     public String home() {
         return "login";
+    }
+
+    @PostMapping("/validar")
+    public String inicioSesion(@RequestParam String user,@RequestParam String pass){
+
+        return "home";
     }
 }
