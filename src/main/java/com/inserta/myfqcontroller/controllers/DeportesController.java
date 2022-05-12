@@ -38,8 +38,9 @@ public class DeportesController {
 
     @GetMapping("/deportes/dniFecha/{dni}/{fecha}")
 
-    public List<Deporte> deporteByUserFecha(@PathVariable String dni, @PathVariable LocalDateTime fecha){
-        return deportesService.deportesByDniFecha(dni, fecha);
+    public List<Deporte> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
+        LocalDateTime fechaActual = LocalDateTime.parse(fecha);
+        return deportesService.deportesByDniFecha(dni, fechaActual);
     }
 
 }

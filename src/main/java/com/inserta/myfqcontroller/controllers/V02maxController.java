@@ -39,7 +39,8 @@ public class V02maxController {
 
     @GetMapping("/v02max/dniFecha/{dni}/{fecha}")
 
-    public List<V02max> deporteByUserFecha(@PathVariable String dni, @PathVariable LocalDateTime fecha){
-        return v02maxService.tensionByDniFecha(dni, fecha);
+    public List<V02max> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
+        LocalDateTime fechaActual = LocalDateTime.parse(fecha);
+        return v02maxService.tensionByDniFecha(dni, fechaActual);
     }
 }

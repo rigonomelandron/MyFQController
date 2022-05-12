@@ -38,8 +38,9 @@ public class TratamientosCronicosController {
 
     @GetMapping("/tratamientos/dniFecha/{dni}/{fecha}")
 
-    public List<TratamientoCronico> deporteByUserFecha(@PathVariable String dni, @PathVariable LocalDateTime fecha){
-        return tratamientosCronicosService.tratamientoByDniFecha(dni, fecha);
+    public List<TratamientoCronico> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
+        LocalDateTime fechaActual = LocalDateTime.parse(fecha);
+        return tratamientosCronicosService.tratamientoByDniFecha(dni, fechaActual);
     }
 
 }
