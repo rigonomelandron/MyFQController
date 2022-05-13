@@ -30,8 +30,8 @@ public class UsuariosController {
 
     @GetMapping("/usuarios/userPass/{usuario}/{pass}")
 
-    public Usuario usuarioByUserPass(@PathVariable String user, @PathVariable String pass){
-        return usuariosService.usuario(user,pass);
+    public Usuario usuarioByUserPass(@PathVariable String usuario, @PathVariable String pass){
+        return usuariosService.usuario(usuario,pass);
     }
 
 
