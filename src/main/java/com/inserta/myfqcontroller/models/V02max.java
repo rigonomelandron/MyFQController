@@ -24,7 +24,7 @@ public class V02max {
     @Column(nullable = false)
     private String dniPaciente;
     private float v02max;
-    private int ppmreposo;
+    private int ppmReposo;
 
 
 }
