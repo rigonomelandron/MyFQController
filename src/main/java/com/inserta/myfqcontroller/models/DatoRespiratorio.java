@@ -20,7 +20,7 @@ public class DatoRespiratorio {
     LocalDateTime fecha;
     String dniPaciente;
     float fvc;
-    float fev;
+    float fev1;
     float saturacionBasal;
     float capacidadAerobica;
 

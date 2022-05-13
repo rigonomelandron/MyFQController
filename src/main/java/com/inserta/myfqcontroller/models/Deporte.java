@@ -24,6 +24,6 @@ public class Deporte {
     private String dniPaciente;
     private String tipo;
     private float calorias;
-    private int ppmmaxima;
+    private int ppmMaxima;
     private int tiempo;
 }
