@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -22,7 +22,7 @@ public class CicloAntibiotico {
     String antibiotico;
     boolean esIntravenoso;
     @Column(columnDefinition = "TIMESTAMP")
-    LocalDateTime fechaInicio;
+    private Date fechaInicio;
     @Column(columnDefinition = "TIMESTAMP")
-    LocalDateTime fechaFin;
+    private Date  fechaFin;
 }

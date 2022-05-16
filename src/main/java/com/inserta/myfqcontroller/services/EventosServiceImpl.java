@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,7 +30,7 @@ public class EventosServiceImpl implements EventosService {
     }
 
     @Override
-    public List<Evento> getEventosDniPacienteAndFecha(String dni, LocalDateTime fecha) {
+    public List<Evento> getEventosDniPacienteAndFecha(String dni, Date fecha) {
         return eventosRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

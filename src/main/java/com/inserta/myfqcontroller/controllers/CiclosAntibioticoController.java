@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -31,9 +34,9 @@ public class CiclosAntibioticoController {
     }
 
     @GetMapping("/ciclos-antibiotico/dni/{dni}/{fecha}")
-    public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni, @PathVariable String fecha){
-        LocalDateTime fechaI = LocalDateTime.parse(fecha);
-        return ciclosAntibioticoService.getCiclosAntibioticoByDniAndFechaInicio(dni, fechaI);
+    public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
+        Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+        return ciclosAntibioticoService.getCiclosAntibioticoByDniAndFechaInicio(dni, date);
     }
 
     @GetMapping("/ciclos-antibiotico/intravenosos")

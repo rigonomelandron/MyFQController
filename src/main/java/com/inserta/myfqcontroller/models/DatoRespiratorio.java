@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -17,7 +17,7 @@ public class DatoRespiratorio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @Column(columnDefinition = "TIMESTAMP")
-    LocalDateTime fecha;
+    private Date fecha;
     @ManyToOne
     @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
     private Paciente paciente;

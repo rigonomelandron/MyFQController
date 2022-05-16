@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -31,7 +32,7 @@ public class AntecedentesServiceImpl implements AntecedentesService{
     }
 
     @Override
-    public List<Antecedente> getAntecedentesByDniAndFecha(String dni, LocalDateTime fecha) {
+    public List<Antecedente> getAntecedentesByDniAndFecha(String dni, Date fecha) {
         return antecedentesRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

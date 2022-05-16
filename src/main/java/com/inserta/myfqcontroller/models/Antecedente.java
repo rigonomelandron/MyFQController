@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -20,7 +21,7 @@ public class Antecedente {
     @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
     private Paciente paciente;
     @Column(columnDefinition = "TIMESTAMP")
-    LocalDateTime fecha;
-    String diagnostico;
+    private Date fecha;
+    private String diagnostico;
 
 }

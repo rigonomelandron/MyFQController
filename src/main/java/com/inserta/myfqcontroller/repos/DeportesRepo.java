@@ -6,6 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -13,5 +14,5 @@ import java.util.List;
 public interface DeportesRepo extends JpaRepository<Deporte, Integer> {
 
     public List<Deporte> findByPaciente_Dni(String dni);
-    public List<Deporte> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
+    public List<Deporte> findByPaciente_DniAndFecha(String dni, Date fecha);
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -28,7 +29,7 @@ public class V02maxServicesImpl implements  V02maxService{
     }
 
     @Override
-    public List<V02max> tensionByDniFecha(String dni, LocalDateTime fecha) {
+    public List<V02max> tensionByDniFecha(String dni, Date fecha) {
         return v02maxRepos.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

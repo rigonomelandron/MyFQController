@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,7 +30,7 @@ public class TensionServicesImpl implements TensionService{
     }
 
     @Override
-    public List<Tension> tensionByDniFecha(String dni, LocalDateTime fecha) {
+    public List<Tension> tensionByDniFecha(String dni, Date fecha) {
         return tensionesRepos.findByPaciente_DniAndFecha(dni,fecha);
     }
 }

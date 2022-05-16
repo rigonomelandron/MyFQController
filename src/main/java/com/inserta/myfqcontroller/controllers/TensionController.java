@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -38,9 +42,11 @@ public class TensionController {
 
     @GetMapping("/tension/dniFecha/{dni}/{fecha}")
 
-    public List<Tension> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
+    public List<Tension> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
 
-        LocalDateTime fechaActual = LocalDateTime.parse(fecha);
-        return tensionService.tensionByDniFecha(dni, fechaActual);
+
+        Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+
+        return tensionService.tensionByDniFecha(dni, date);
     }
 }

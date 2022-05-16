@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -39,8 +42,8 @@ public class V02maxController {
 
     @GetMapping("/v02max/dniFecha/{dni}/{fecha}")
 
-    public List<V02max> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
-        LocalDateTime fechaActual = LocalDateTime.parse(fecha);
-        return v02maxService.tensionByDniFecha(dni, fechaActual);
+    public List<V02max> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
+        Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+        return v02maxService.tensionByDniFecha(dni, date);
     }
 }

@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -38,9 +41,9 @@ public class DeportesController {
 
     @GetMapping("/deportes/dniFecha/{dni}/{fecha}")
 
-    public List<Deporte> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha){
-        LocalDateTime fechaActual = LocalDateTime.parse(fecha);
-        return deportesService.deportesByDniFecha(dni, fechaActual);
+    public List<Deporte> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
+        Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+        return deportesService.deportesByDniFecha(dni, date);
     }
 
 }
