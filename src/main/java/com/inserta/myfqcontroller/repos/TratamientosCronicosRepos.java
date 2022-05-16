@@ -7,11 +7,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Repository
 @RepositoryRestResource(path="tratamientos")
 public interface TratamientosCronicosRepos extends JpaRepository<TratamientoCronico,Integer> {
     public List<TratamientoCronico> findByPaciente_Dni(String dni);
-    public List<TratamientoCronico> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
+    public List<TratamientoCronico> findByPaciente_DniAndFecha(String dni, Date fecha);
 }

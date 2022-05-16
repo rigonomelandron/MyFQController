@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -20,7 +20,7 @@ public class V02max {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(columnDefinition = "TIMESTAMP")
-    private LocalDateTime fecha;
+    private Date fecha;
     @ManyToOne
     @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
     private Paciente paciente;

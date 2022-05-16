@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -30,9 +33,9 @@ public class AntecedentesController {
     }
 
     @GetMapping("/antecedentes/dni/{dni}/{fecha}")
-    public List<Antecedente> getAntecedentesByDniAndFecha(@PathVariable String dni, @PathVariable String fecha){
-        LocalDateTime fechaI = LocalDateTime.parse(fecha);
-        return antecedentesService.getAntecedentesByDniAndFecha(dni, fechaI);
+    public List<Antecedente> getAntecedentesByDniAndFecha(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
+        Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+        return antecedentesService.getAntecedentesByDniAndFecha(dni, date);
     }
     @GetMapping("/antecedentes/id/{id}")
     public Antecedente getAntecedentesById(@PathVariable String id){

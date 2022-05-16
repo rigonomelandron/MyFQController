@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -28,7 +29,7 @@ public class GlicadasServiceImpl implements GlicadasService{
     }
 
     @Override
-    public List<Glicada> getGlicadasByDniAndFecha(String dni, LocalDateTime fecha) {
+    public List<Glicada> getGlicadasByDniAndFecha(String dni, Date fecha) {
         return glicadasRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

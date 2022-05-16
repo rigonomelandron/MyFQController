@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -30,7 +31,7 @@ public class DeportesServicesImpl implements DeportesService{
     }
 
     @Override
-    public List<Deporte> deportesByDniFecha(String dni, LocalDateTime fecha) {
+    public List<Deporte> deportesByDniFecha(String dni, Date fecha) {
         return deportesRepo.findByPaciente_DniAndFecha(dni,fecha);
     }
 }

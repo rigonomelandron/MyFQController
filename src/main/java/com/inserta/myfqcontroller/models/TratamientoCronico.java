@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +23,7 @@ public class TratamientoCronico {
     private Paciente paciente;
     private String descripcion;
     @Column(columnDefinition = "TIMESTAMP")
-    private LocalDateTime fecha;
+    private Date fecha;
     private String archivo;
     private boolean oral;
     private boolean inhalado;
