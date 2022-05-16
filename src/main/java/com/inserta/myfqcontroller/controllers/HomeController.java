@@ -33,10 +33,10 @@ public class HomeController {
             return "home";
         }
     }
-    @RequestMapping("/")
+    @RequestMapping("/logout")
     public String logout(HttpSession session){
         session.invalidate();
-        return "redirect:/validar";
+        return "redirect:/";
     }
 
 
