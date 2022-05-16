@@ -26,12 +26,17 @@ public class HomeController {
         Usuario usuario = usuariosRepos.findByUsuarioAndPass(user, pass);
 
         if (usuario == null) {
-
+            session.setAttribute("info", "Usuario o Contraseña incorrecta");
             return "login";
         } else {
             session.setAttribute("usuario", user);
             return "home";
         }
+    }
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/validar";
     }
 
 
