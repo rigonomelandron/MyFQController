@@ -26,11 +26,11 @@ public class DeportesServicesImpl implements DeportesService{
 
     @Override
     public List<Deporte> deportesByDni(String dni) {
-        return deportesRepo.findByDniPaciente(dni);
+        return deportesRepo.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<Deporte> deportesByDniFecha(String dni, LocalDateTime fecha) {
-        return deportesRepo.findByDniPacienteAndFecha(dni,fecha);
+        return deportesRepo.findByPaciente_DniAndFecha(dni,fecha);
     }
 }

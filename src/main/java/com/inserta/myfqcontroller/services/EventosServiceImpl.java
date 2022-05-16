@@ -25,11 +25,11 @@ public class EventosServiceImpl implements EventosService {
 
     @Override
     public List<Evento> getEventosDniPaciente(String dni) {
-        return eventosRepo.findByDniPaciente(dni);
+        return eventosRepo.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<Evento> getEventosDniPacienteAndFecha(String dni, LocalDateTime fecha) {
-        return eventosRepo.findByDniPacienteAndFecha(dni, fecha);
+        return eventosRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

@@ -21,12 +21,12 @@ public class DatosRespiratoriosServiceImpl implements DatosRespiratoriosService{
 
     @Override
     public List<DatoRespiratorio> getDatosRespiratoriosByDni(String dni) {
-        return datosRespiratoriosRepo.findByDniPaciente(dni);
+        return datosRespiratoriosRepo.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<DatoRespiratorio> getDatosRespiratoriosByDniAndFecha(String dni, LocalDateTime fecha) {
-        return datosRespiratoriosRepo.findByDniPacienteAndFecha(dni, fecha);
+        return datosRespiratoriosRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 
     @Override

@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path = "analiticas")
 public interface  AnaliticasRepo extends JpaRepository<Analitica, Integer> {
-    public List<Analitica> findByDniPaciente(String dni);
-    public List<Analitica> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<Analitica> findByPaciente_Dni(String dni);
+    public List<Analitica> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 }

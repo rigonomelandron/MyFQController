@@ -18,7 +18,9 @@ public class DatoRespiratorio {
     int id;
     @Column(columnDefinition = "TIMESTAMP")
     LocalDateTime fecha;
-    String dniPaciente;
+    @ManyToOne
+    @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
+    private Paciente paciente;
     float fvc;
     float fev1;
     float saturacionBasal;

@@ -17,8 +17,9 @@ public class Tension {
     private int id;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime fecha;
-    @Column(nullable = false)
-    private String dniPaciente;
+    @ManyToOne
+    @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
+    private Paciente paciente;
     @Column(nullable = true)
     private int maxTension;
     @Column(nullable = true)

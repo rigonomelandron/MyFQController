@@ -22,12 +22,12 @@ public class CiclosAntibioticoServiceImpl implements CiclosAntibioticoService {
 
     @Override
     public List<CicloAntibiotico> getCiclosAntibioticoByDni(String dni) {
-        return ciclosAntibioticosRepo.findByDniPaciente(dni);
+        return ciclosAntibioticosRepo.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<CicloAntibiotico> getCiclosAntibioticoByDniAndFechaInicio(String dni, LocalDateTime fecha) {
-        return ciclosAntibioticosRepo.findByDniPacienteAndFechaInicio(dni, fecha);
+        return ciclosAntibioticosRepo.findByPaciente_DniAndFechaInicio(dni, fecha);
     }
 
     @Override

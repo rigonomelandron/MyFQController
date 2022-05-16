@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path="tratamientos")
 public interface TratamientosCronicosRepos extends JpaRepository<TratamientoCronico,Integer> {
-    public List<TratamientoCronico> findByDniPaciente(String dni);
-    public List<TratamientoCronico> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<TratamientoCronico> findByPaciente_Dni(String dni);
+    public List<TratamientoCronico> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 }

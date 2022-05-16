@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path="tension")
 public interface TensionesRepos extends JpaRepository<Tension, Integer> {
-    public List<Tension> findByDniPaciente(String dni);
-    public List<Tension> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<Tension> findByPaciente_Dni(String dni);
+    public List<Tension> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 }

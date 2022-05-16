@@ -25,11 +25,11 @@ public class TensionServicesImpl implements TensionService{
 
     @Override
     public List<Tension> tensionByDni(String dni) {
-        return tensionesRepos.findByDniPaciente(dni);
+        return tensionesRepos.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<Tension> tensionByDniFecha(String dni, LocalDateTime fecha) {
-        return tensionesRepos.findByDniPacienteAndFecha(dni,fecha);
+        return tensionesRepos.findByPaciente_DniAndFecha(dni,fecha);
     }
 }

@@ -21,8 +21,9 @@ public class V02max {
     private int id;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime fecha;
-    @Column(nullable = false)
-    private String dniPaciente;
+    @ManyToOne
+    @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
+    private Paciente paciente;
     private float v02max;
     private int ppmReposo;
 

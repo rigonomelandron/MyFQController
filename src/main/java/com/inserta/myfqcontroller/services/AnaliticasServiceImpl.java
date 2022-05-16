@@ -24,12 +24,12 @@ public class AnaliticasServiceImpl implements AnaliticasService{
 
     @Override
     public List<Analitica> getAnaliticasByDni(String dni) {
-        return analiticasRepo.findByDniPaciente(dni);
+        return analiticasRepo.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<Analitica> getAnaliticasByDniAndFecha(String dni, LocalDateTime fecha) {
 
-        return analiticasRepo.findByDniPacienteAndFecha(dni, fecha);
+        return analiticasRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

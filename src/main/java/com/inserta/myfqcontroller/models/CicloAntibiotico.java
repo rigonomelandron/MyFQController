@@ -16,7 +16,9 @@ public class CicloAntibiotico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String dniPaciente;
+    @ManyToOne
+    @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
+    private Paciente paciente;
     String antibiotico;
     boolean esIntravenoso;
     @Column(columnDefinition = "TIMESTAMP")

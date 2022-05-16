@@ -16,7 +16,9 @@ public class Antecedente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String dniPaciente;
+    @ManyToOne
+    @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
+    private Paciente paciente;
     @Column(columnDefinition = "TIMESTAMP")
     LocalDateTime fecha;
     String diagnostico;

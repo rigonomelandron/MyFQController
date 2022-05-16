@@ -20,8 +20,9 @@ public class Deporte {
     private int id;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime fecha;
-    @Column(nullable = false)
-    private String dniPaciente;
+    @ManyToOne
+    @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
+    private Paciente paciente;
     private String tipo;
     private float calorias;
     private int ppmMaxima;

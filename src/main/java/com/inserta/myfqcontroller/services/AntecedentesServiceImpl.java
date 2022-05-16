@@ -27,11 +27,11 @@ public class AntecedentesServiceImpl implements AntecedentesService{
 
     @Override
     public List<Antecedente> getAntecedentesByDni(String dni) {
-        return antecedentesRepo.findByDniPaciente(dni);
+        return antecedentesRepo.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<Antecedente> getAntecedentesByDniAndFecha(String dni, LocalDateTime fecha) {
-        return antecedentesRepo.findByDniPacienteAndFecha(dni, fecha);
+        return antecedentesRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

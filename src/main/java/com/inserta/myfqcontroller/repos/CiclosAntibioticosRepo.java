@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path = "ciclos-antibiotico")
 public interface CiclosAntibioticosRepo extends JpaRepository<CicloAntibiotico, Integer> {
-    public List<CicloAntibiotico> findByDniPaciente(String dni);
-    public List<CicloAntibiotico> findByDniPacienteAndFechaInicio(String dni, LocalDateTime fecha);
+    public List<CicloAntibiotico> findByPaciente_Dni(String dni);
+    public List<CicloAntibiotico> findByPaciente_DniAndFechaInicio(String dni, LocalDateTime fecha);
     public List<CicloAntibiotico> findByEsIntravenosoTrue();
 }

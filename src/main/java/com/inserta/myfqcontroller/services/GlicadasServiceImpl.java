@@ -24,11 +24,11 @@ public class GlicadasServiceImpl implements GlicadasService{
 
     @Override
     public List<Glicada> getGlicadasByDni(String dni) {
-        return glicadasRepo.findByDniPaciente(dni);
+        return glicadasRepo.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<Glicada> getGlicadasByDniAndFecha(String dni, LocalDateTime fecha) {
-        return glicadasRepo.findByDniPacienteAndFecha(dni, fecha);
+        return glicadasRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
 }

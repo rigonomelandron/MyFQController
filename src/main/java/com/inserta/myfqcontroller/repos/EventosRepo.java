@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path = "eventos")
 public interface EventosRepo extends JpaRepository<Evento, Integer> {
-    public List<Evento> findByDniPaciente(String dni);
-    public List<Evento> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<Evento> findByPaciente_Dni(String dni);
+    public List<Evento> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 
 }

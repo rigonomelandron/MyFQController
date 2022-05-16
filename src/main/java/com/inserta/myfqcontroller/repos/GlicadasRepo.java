@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path = "glicada")
 public interface GlicadasRepo extends JpaRepository<Glicada, Integer> {
-    public List<Glicada> findByDniPaciente(String dni);
-    public List<Glicada> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<Glicada> findByPaciente_Dni(String dni);
+    public List<Glicada> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 }

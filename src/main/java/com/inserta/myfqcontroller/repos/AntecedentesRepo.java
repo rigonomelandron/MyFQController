@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path = "antecedentes")
 public interface AntecedentesRepo extends JpaRepository<Antecedente, Integer> {
-    public List<Antecedente> findByDniPaciente(String dni);
-    public List<Antecedente> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<Antecedente> findByPaciente_Dni(String dni);
+    public List<Antecedente> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 }

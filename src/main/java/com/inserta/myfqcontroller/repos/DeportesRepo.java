@@ -12,6 +12,6 @@ import java.util.List;
 @RepositoryRestResource(path="deportes")
 public interface DeportesRepo extends JpaRepository<Deporte, Integer> {
 
-    public List<Deporte> findByDniPaciente(String dni);
-    public List<Deporte> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<Deporte> findByPaciente_Dni(String dni);
+    public List<Deporte> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 }
