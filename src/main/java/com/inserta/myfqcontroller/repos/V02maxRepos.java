@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path="v02max")
 public interface V02maxRepos extends JpaRepository<V02max, Integer> {
-    public List<V02max> findByDniPaciente(String dni);
-    public List<V02max> findByDniPacienteAndFecha(String dni, LocalDateTime fecha);
+    public List<V02max> findByPaciente_Dni(String dni);
+    public List<V02max> findByPaciente_DniAndFecha(String dni, LocalDateTime fecha);
 }
