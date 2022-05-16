@@ -24,11 +24,11 @@ public class V02maxServicesImpl implements  V02maxService{
 
     @Override
     public List<V02max> tensionByDni(String dni) {
-        return v02maxRepos.findByDniPaciente(dni);
+        return v02maxRepos.findByPaciente_Dni(dni);
     }
 
     @Override
     public List<V02max> tensionByDniFecha(String dni, LocalDateTime fecha) {
-        return v02maxRepos.findByDniPacienteAndFecha(dni, fecha);
+        return v02maxRepos.findByPaciente_DniAndFecha(dni, fecha);
     }
 }
