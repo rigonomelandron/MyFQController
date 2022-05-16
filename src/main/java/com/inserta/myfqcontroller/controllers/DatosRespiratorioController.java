@@ -32,7 +32,7 @@ public class DatosRespiratorioController {
         return datosRespiratoriosService.getDatosRespiratorios();
     }
 
-    @GetMapping("/datos-respiratorios/dni/{dni}/{fecha}")
+    @GetMapping("/datos-respiratorios/dniFecha/{dni}/{fecha}")
     public List<DatoRespiratorio> getDatosRespiratoriosByDni(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
         Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
         return datosRespiratoriosService.getDatosRespiratoriosByDniAndFecha(dni, date);

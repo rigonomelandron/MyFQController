@@ -32,7 +32,7 @@ public class AntecedentesController {
         return antecedentesService.getAntecedentesByDni(dni);
     }
 
-    @GetMapping("/antecedentes/dni/{dni}/{fecha}")
+    @GetMapping("/antecedentes/dniFecha/{dni}/{fecha}")
     public List<Antecedente> getAntecedentesByDniAndFecha(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
         Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
         return antecedentesService.getAntecedentesByDniAndFecha(dni, date);

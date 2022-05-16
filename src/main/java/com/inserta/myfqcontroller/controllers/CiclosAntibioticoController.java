@@ -33,7 +33,7 @@ public class CiclosAntibioticoController {
         return ciclosAntibioticoService.getCiclosAntibioticoByDni(dni);
     }
 
-    @GetMapping("/ciclos-antibiotico/dni/{dni}/{fecha}")
+    @GetMapping("/ciclos-antibiotico/dniFecha/{dni}/{fecha}")
     public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
         Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
         return ciclosAntibioticoService.getCiclosAntibioticoByDniAndFechaInicio(dni, date);
