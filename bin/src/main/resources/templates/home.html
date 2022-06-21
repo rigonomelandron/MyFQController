@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+    <script src="https://kit.fontawesome.com/e49f0f0edc.js" crossorigin="anonymous"></script>
+    <title>MyFQController API</title>
+</head>
+<body>
+<!-- Home -->
+<header class="bg-info text-light text-center p-4">
+    <h1>MyFQController</h1>
+    <h3>API V1</h3>
+</header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/equipos</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/equipos">/api/v1/equipos</a></td>
+                        <td>Equipos</td>
+                        <td>Devuelve todos los equipos</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/equipos/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/equipos/id/1">/api/v1/equipos/id/1</a></td>
+                        <td>Equipos</td>
+                        <td>Devuelve el equipo cuya id es 1</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/antecedentes</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/antecedentes">/api/v1/antecedentes</a></td>
+                        <td>Antecedentes</td>
+                        <td>Devuelve todos los antecedentes</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/antecedentes/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/antecedentes/dni/012345678M">/api/v1/antecedentes/dni/012345678M</a></td>
+                        <td>Antecedentes</td>
+                        <td>Devuelve los antecedentes cuyo usuario tiene el dni 012345678M</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/antecedentes/dniFecha/{dni}}/{fecha}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/antecedentes/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/antecedentes/dniFecha/012345678M/2022-05-12T00:00:00</a></td>
+                        <td>Antecedentes</td>
+                        <td>Devuelve los antecedentes cuyo usuario tiene el dni 012345678M y la fecha es 2022-05-12T00:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/equipos/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/antecedentes/id/1">/api/v1/equipos/id/1</a></td>
+                        <td>Antecedentes</td>
+                        <td>Devuelve el antecedente cuya id es 1</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/ciclos-antibiotico</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico">/api/v1/ciclos-antibiotico</a></td>
+                        <td>Ciclos de Antibiótico</td>
+                        <td>Devuelve todos los ciclos de antibiótico</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/ciclos-antibiotico/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico/dni/012345678M">/api/v1/ciclos-antibiotico/dni/012345678M</a></td>
+                        <td>Ciclos de Antibiótico</td>
+                        <td>Devuelve los ciclos de antibiótico cuyo usuario tiene el dni 012345678M</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/ciclos-antibiotico/dniFecha/{dni}}/{fecha}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/ciclos-antibiotico/dniFecha/012345678M/2022-05-12T00:00:00</a></td>
+                        <td>Ciclos de Antibiótico</td>
+                        <td>Devuelve los ciclos de antibiótico cuyo usuario tiene el dni 012345678M y la fecha es 2022-05-12T00:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/ciclos-antibiotico/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/ciclos-antibiotico/id/1">/api/v1/ciclos-antibiotico/id/1</a></td>
+                        <td>Ciclos de Antibiótico</td>
+                        <td>Devuelve el ciclo de antibiótico cuya id es 1</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/datos-respiratorios</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/datos-respiratorios">/api/v1/datos-respiratorios</a></td>
+                        <td>Datos Respiratorios</td>
+                        <td>Devuelve todos los Datos Respiratorios</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/datos-respiratorios/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/datos-respiratorios/dni/012345678M">/api/v1/datos-respiratorios/dni/012345678M</a></td>
+                        <td>Datos Respiratorios</td>
+                        <td>Devuelve los datos respiratorios cuyo usuario tiene el dni 012345678M</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/datos-respiratorios/dniFecha/{dni}}/{fecha}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/datos-respiratorios/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/datos-respiratorios/dniFecha/012345678M/2022-05-12T00:00:00</a></td>
+                        <td>Datos Respiratorios</td>
+                        <td>Devuelve los datos respiratorios cuyo usuario tiene el dni 012345678M y la fecha es 2022-05-12T00:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/datos-respiratorios/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/datos-respiratorios/id/1">/api/v1/datos-respiratorios/id/1</a></td>
+                        <td>Datos Respiratorios</td>
+                        <td>Devuelve el dato respiratorio cuya id es 1</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/usuarios/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/usuarios/listado">/api/v1/usuarios/listado</a></td>
+                        <td>Usuarios</td>
+                        <td>Devuelve todos los usuarios</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/usuarios/user/{user}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/usuarios/user/paciente">/api/v1/usuario/user/paciente</a></td>
+                        <td>Usuarios</td>
+                        <td>Devuelve el usuario cuyo username es paco</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/usuarios/userPass/{usuario}/{pass}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/usuarios/userPass/paciente/54321">/api/v1/usuarios/userPass/{paciente}/{54321}</a></td>
+                        <td>Usuarios</td>
+                        <td>Devuelve los usuarios por username y password</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/tratamientos/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tratamientos/listado">/api/v1/tratamientos/listado</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve todos los tratamientos</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/v1/tratamientos/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tratamientos/id/1">/api/v1//tratamientos/id/1</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve los tratamientos crónicos por id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/tratamientos/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tratamientos/dni/012345678M">/api/v1/tratamientos/dni/012345678M</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve tratamientos por id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/tratamientos/dniFecha/{dni}/{fecha}"</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tratamientos/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/tratamientos/dniFecha/012345678M/2022-05-12T00:00:00"</a></td>
+                        <td>tratamientos_cronicos</td>
+                        <td>Devuelve tratamiento por dni y fecha</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+                <div class="col"></div>
+                <div class="col-12 shadow p-3">
+                    <table  class="table table-bordered mt-4">
+                        <tr>
+                            <th>URL</th>
+                            <th>Prueba</th>
+                            <th>Tabla</th>
+                            <th>Descripción</th>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/listado</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tension/listado">/api/v1/tension/listado</a></td>
+                            <td>TensionController</td>
+                            <td>Devuelve las tensiones</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/id/{id}</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tension/id/1">/api/v1/tension/id/1</a></td>
+                            <td>TensionController</td>
+                            <td>Devuelve tensión por id</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/dni/{dni}</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tension/dni/012345678M">/api/v1/tension/dni/012345678M</a></td>
+                            <td>Tension</td>
+                            <td>Devuelve las tensiones por dni</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/tension/dniFecha/{dni}/{fecha}"</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/tension/dniFecha/012345678M/2022-05-13">/api/v1/tension/dnifecha/012345678M/2022-05-12T00:00:00"</a></td>
+                            <td>Tension</td>
+                            <td>Devuelve las tensiones por dni y fecha</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col"></div>
+            </div>
+        <div class="row">
+                <div class="col"></div>
+                <div class="col-12 shadow p-3">
+                    <table class="table table-bordered mt-4">
+                        <tr>
+                            <th>URL</th>
+                            <th>Prueba</th>
+                            <th>Tabla</th>
+                            <th>Descripción</th>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/deportes/listado</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/deportes/listado">/api/v1/deportes/listado</a></td>
+                            <td>deportes</td>
+                            <td>Devuelve listado deportes</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/deportes/id/{id}</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/deportes/id/1">/api/v1/deportes/id/1</a></td>
+                            <td>deportes</td>
+                            <td>Devuelve deportes id</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/deportes/dni/{dni}</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/deportes/dni/012345678M">/api/v1/deportes/dni/012345678M</a></td>
+                            <td>deportes</td>
+                            <td>Devuelve deportes por dni</td>
+                        </tr>
+                        <tr>
+                            <td>/api/v1/deportes/dniFecha/{dni}/{fecha}"</td>
+                            <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/deportes/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/deportes/dnifecha/012345678M/2022-05-12T00:00:00"</a></td>
+                            <td>deportes</td>
+                            <td>Devuelve deportes por dni y fecha</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="col"></div>
+            </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/v02max/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/v02max/listado">/api/v1/v02max/listado</a></td>
+                        <td>v02max</td>
+                        <td>Devuelve listado v02max</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/v02max/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/v02max/id/1">/api/v1/v02max/id/1</a></td>
+                        <td>v02max</td>
+                        <td>Devuelve v02max id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/v02max/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/v02max/dni/012345678M">/api/v1/v02max/dni/012345678M</a></td>
+                        <td>v02max</td>
+                        <td>Devuelve v02max por dni</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/v02max/dniFecha/{dni}/{fecha}"</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/v02max/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/v02max/dnifecha/012345678M/2022-05-12T00:00:00"</a></td>
+                        <td>v02max</td>
+                        <td>Devuelve v02max por dni y fecha</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/analiticas/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/analiticas/listado">/api/v1/analiticas/listado</a></td>
+                        <td>analiticas</td>
+                        <td>Devuelve listado analiticas</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/analiticas/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/analiticas/id/1">/api/v1/analiticas/id/1</a></td>
+                        <td>analiticas</td>
+                        <td>Devuelve analiticas id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/analiticas/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/analiticas/dni/012345678M">/api/v1/analiticas/dni/012345678M</a></td>
+                        <td>analiticas</td>
+                        <td>Devuelve analiticas por dni</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/analiticas/dniFecha/{dni}/{fecha}"</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/analiticas/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/analiticas/dnifecha/012345678M/2022-05-12T00:00:00"</a></td>
+                        <td>analiticas</td>
+                        <td>Devuelve analiticas por dni y fecha</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/pacientes/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/pacientes/listado">/api/v1/pacientes/listado</a></td>
+                        <td>pacientes</td>
+                        <td>Devuelve listado pacientes</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/v1/pacientes/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/pacientes/dni/012345678M">/api/v1/pacientes/dni/012345678M</a></td>
+                        <td>pacientes</td>
+                        <td>Devuelve pacientes por dni</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/glicadas/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/glicadas/listado">/api/v1/glicadas/listado</a></td>
+                        <td>glicadas</td>
+                        <td>Devuelve listado glicadas</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/glicadas/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/glicadas/id/1">/api/v1/glicadas/id/1</a></td>
+                        <td>glicadas</td>
+                        <td>Devuelve glicadas id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/glicadas/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/glicadas/dni/012345678M">/api/v1/glicadas/dni/012345678M</a></td>
+                        <td>glicadas</td>
+                        <td>Devuelve glicadas por dni</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/glicadas/dniFecha/{dni}/{fecha}"</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/glicadas/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/glicadas/dnifecha/012345678M/2022-05-12T00:00:00"</a></td>
+                        <td>glicadas</td>
+                        <td>Devuelve glicadas por dni y fecha</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/eventos/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/eventos/listado">/api/v1/eventos/listado</a></td>
+                        <td>eventos</td>
+                        <td>Devuelve listado eventos</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/eventos/id/{id}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/eventos/id/1">/api/v1/eventos/id/1</a></td>
+                        <td>eventos</td>
+                        <td>Devuelve eventos id</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/eventos/dni/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/eventos/dni/012345678M">/api/v1/eventos/dni/012345678M</a></td>
+                        <td>eventos</td>
+                        <td>Devuelve eventos por dni</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/eventos/dniFecha/{dni}/{fecha}"</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/eventos/dniFecha/012345678M/2022-05-12T00:00:00">/api/v1/eventos/dnifecha/012345678M/2022-05-12T00:00:00"</a></td>
+                        <td>eventos</td>
+                        <td>Devuelve eventos por dni y fecha</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-12 shadow p-3">
+                <table class="table table-bordered mt-4">
+                    <tr>
+                        <th>URL</th>
+                        <th>Prueba</th>
+                        <th>Tabla</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/doctores/listado</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/doctores/listado">/api/v1/doctores/listado</a></td>
+                        <td>doctores</td>
+                        <td>Devuelve listado doctores</td>
+                    </tr>
+
+                    <tr>
+                        <td>/api/v1/doctores/colegiado/{dni}</td>
+                        <td><a target="_blank" class="btn btn-info text-light" href="/api/v1/doctores/colegiado/0123456789">/api/v1/doctores/colegiado/012345678M</a></td>
+                        <td>doctores</td>
+                        <td>Devuelve doctores por Número de Colegiado</td>
+                    </tr>
+
+
+                </table>
+            </div>
+
+            <div class="col"></div>
+        </div>
+
+    </div>
+        <div class="text-center mt-3"><a href="/logout" class="btn btn-outline-info"><i class="bi-box-arrow-in-right"></i> Log out</a></div>
+
+
+<footer class="container-fluid bg-info text-light p-1 mt-5">
+    <p>2022' (c) Francisco - Reyes - Pedro </p>
+</footer>
+
+<!-- Bootstrap Javascript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
