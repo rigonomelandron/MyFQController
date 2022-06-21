@@ -29,16 +29,18 @@
                         <label for="pass" class="form-label mt-2">Contraseña</label>
                         <input class="form-control mt-2" id="pass" type="password" name="pass">
                         <button class="btn btn-info text-light mt-3">Iniciar Sesión</button>
-                    </form>
                 </div>
             </div>
         </div>
         <div class="col-4"></div>
     </div>
 
-    <p th:text="${session.info}"  class="alert alert-danger mt-3"></p>
+
+
+    <p th:text="${session.info}" th:if="${session.info}" class="alert alert-danger mt-3"></p>
+
 </main>
-<footer class="container-fluid bg-info text-light p-1 mt-5">
+<footer class="container-fluid bg-info text-light p-1 mt-5 fixed-bottom">
     <p>2022' (c) Francisco - Reyes - Pedro</p>
 </footer>
 <!-- Bootstrap Javascript -->

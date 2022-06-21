@@ -27,4 +27,9 @@ public class UsuariosServicesImpl implements  UsuariosService{
     public Usuario usuario(String usuario, String password) {
         return usuariosRepos.findByUsuarioAndPass(usuario,password);
     }
+
+    @Override
+    public Usuario crearUsuario(Usuario usuario) {
+        return usuariosRepos.save(usuario);
+    }
 }

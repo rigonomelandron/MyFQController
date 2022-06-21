@@ -20,4 +20,11 @@ public class PacientesServiceImpl implements PacientesService{
     public Paciente getPacienteByDni(String dni) {
         return pacientesRepo.findByDni(dni);
     }
+
+    @Override
+    public Paciente getPacienteByIdUsuario(String username) {
+        return pacientesRepo.findByIdUsuario(username);
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package com.inserta.myfqcontroller.controllers;
 
 import com.inserta.myfqcontroller.models.DatoRespiratorio;
+import com.inserta.myfqcontroller.models.Paciente;
 import com.inserta.myfqcontroller.services.DatosRespiratoriosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,5 +43,17 @@ public class DatosRespiratorioController {
     public DatoRespiratorio getDatosRespiratoriosById(@PathVariable String id){
         Integer idI = Integer.valueOf(id);
         return datosRespiratoriosService.getDatoRespiratorioById(idI);
+    }
+    @GetMapping("/datos-respiratorios/fechas/{desde}/{hasta}")
+    public  List<DatoRespiratorio> findAllByFechaBetween(@PathVariable Date desde, @PathVariable  Date hasta)  {
+        return datosRespiratoriosService.findAllByFechaBetween(desde,hasta);
+    }
+
+
+    @GetMapping("/datos-respiratorios/idUsuario/{idUsuario}/{fecha}")
+    public List<DatoRespiratorio> findAllByPacienteIdUsuario(@PathVariable String idUsuario, @PathVariable Date fecha) throws ParseException {
+
+        System.out.println(fecha);
+        return datosRespiratoriosService.findAllByPacienteIdUsuarioFecha(idUsuario ,fecha);
     }
 }

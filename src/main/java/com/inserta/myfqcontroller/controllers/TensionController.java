@@ -5,10 +5,7 @@ import com.inserta.myfqcontroller.models.Deporte;
 import com.inserta.myfqcontroller.models.Tension;
 import com.inserta.myfqcontroller.services.TensionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,5 +45,17 @@ public class TensionController {
         Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
 
         return tensionService.tensionByDniFecha(dni, date);
+    }
+    @GetMapping("/tension/fechas/{desde}/{hasta}")
+    public List<Tension>getBetween(@PathVariable Date desde, @PathVariable Date hasta) throws ParseException {
+
+        return tensionService.findAllByFechaBetween(desde, hasta);
+    }
+
+    @PostMapping("/tension")
+    public Tension guardarTension(@RequestBody Tension tension){
+
+
+        return tension;
     }
 }

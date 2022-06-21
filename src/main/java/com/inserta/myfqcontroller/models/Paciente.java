@@ -3,10 +3,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Data
 @NoArgsConstructor
@@ -24,5 +22,5 @@ public class Paciente {
     private double altura;
     private String mutacion1;
     private String mutacion2;
-    private String id_usuario;
+    private String idUsuario;
 }

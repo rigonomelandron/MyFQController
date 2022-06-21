@@ -3,11 +3,9 @@ package com.inserta.myfqcontroller.controllers;
 
 import com.inserta.myfqcontroller.models.Usuario;
 import com.inserta.myfqcontroller.services.UsuariosService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,6 +30,11 @@ public class UsuariosController {
 
     public Usuario usuarioByUserPass(@PathVariable String usuario, @PathVariable String pass){
         return usuariosService.usuario(usuario,pass);
+    }
+    @PostMapping("/usuario/crear")
+    public Usuario crearUsuario(@RequestBody Usuario usuario){
+
+        return usuariosService.crearUsuario(usuario);
     }
 
 

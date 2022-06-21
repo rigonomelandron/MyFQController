@@ -32,4 +32,9 @@ public class GlicadasServiceImpl implements GlicadasService{
     public List<Glicada> getGlicadasByDniAndFecha(String dni, Date fecha) {
         return glicadasRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
+
+    @Override
+    public List<Glicada> findAllByFechaBetween(Date desde, Date hasta) {
+        return glicadasRepo.findAllByFechaBetween(desde,hasta);
+    }
 }

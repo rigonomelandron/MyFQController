@@ -45,4 +45,11 @@ public class GlicadasController {
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
         return glicadasService.getGlicadasByDniAndFecha(dni, date);
     }
+
+    @GetMapping("/glicadas/fechas/{desde}/{hasta}")
+    public List<Glicada> findAllByFechaBetween(@PathVariable Date desde, @PathVariable Date hasta) throws ParseException {
+
+        return glicadasService.findAllByFechaBetween(desde, hasta);
+
+    }
 }

@@ -11,4 +11,5 @@ public interface UsuariosService {
 
     public List<Usuario> listado();
     public Usuario usuario(String usuario, String password);
+    public Usuario crearUsuario(Usuario usuario);
 }

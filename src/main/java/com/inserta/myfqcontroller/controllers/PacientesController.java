@@ -33,5 +33,11 @@ public class PacientesController {
 
     }
 
+    @GetMapping("/pacientes/userName/{username}")
+    public Paciente pacienteByUserName(@PathVariable String username){
+        return pacientesService.getPacienteByIdUsuario(username);
+
+    }
+
 
 }
