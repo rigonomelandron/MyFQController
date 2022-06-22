@@ -52,4 +52,9 @@ public class GlicadasController {
         return glicadasService.findAllByFechaBetween(desde, hasta);
 
     }
+    @GetMapping("/glicadas/idUsuario/{idUsuario}/{fecha}")
+    public List<Glicada> findAllByIdUsuarioAndFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
+
+        return glicadasService.findAllByPacienteIdUsuarioAndFecha(idUsuario, fecha);
+    }
 }

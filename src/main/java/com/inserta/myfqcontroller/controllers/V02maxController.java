@@ -46,4 +46,10 @@ public class V02maxController {
         Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
         return v02maxService.tensionByDniFecha(dni, date);
     }
+
+    @GetMapping("/v02max/idUsuario/{idUsuario}/{fecha}")
+    public List<V02max> deporteByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
+
+        return v02maxService.tensionByIdUsuarioFecha(idUsuario, fecha);
+    }
 }

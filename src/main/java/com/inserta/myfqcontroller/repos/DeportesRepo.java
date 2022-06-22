@@ -15,4 +15,6 @@ public interface DeportesRepo extends JpaRepository<Deporte, Integer> {
 
     public List<Deporte> findByPaciente_Dni(String dni);
     public List<Deporte> findByPaciente_DniAndFecha(String dni, Date fecha);
+
+    public List<Deporte> findByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha);
 }

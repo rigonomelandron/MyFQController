@@ -20,4 +20,9 @@ public class DoctoresServiceImpl implements DoctoresService{
     public Doctor getDoctorByNumColegiado(String numColegiado) {
         return doctoresRepo.findByNumColegiado(numColegiado);
     }
+
+    @Override
+    public Doctor getDoctorByIdUsuario(String idUsuario) {
+        return doctoresRepo.findByIdUsuario(idUsuario);
+    }
 }

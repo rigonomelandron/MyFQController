@@ -35,4 +35,7 @@ public class AntecedentesServiceImpl implements AntecedentesService{
     public List<Antecedente> getAntecedentesByDniAndFecha(String dni, Date fecha) {
         return antecedentesRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
+    public List<Antecedente> getAntecedentesByIdUsuarioAndFecha(String idUsuario, Date fecha) {
+        return antecedentesRepo.findByPaciente_IdUsuarioAndFecha(idUsuario, fecha);
+    }
 }

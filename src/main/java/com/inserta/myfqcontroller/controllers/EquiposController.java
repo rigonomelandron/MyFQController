@@ -28,4 +28,8 @@ public class EquiposController {
         Integer idI = Integer.valueOf(id);
         return equiposService.getEquiposById(idI);
     }
+    @GetMapping("/equipos/idMedico/{idMedico}")
+    public List<Equipo> getEquiposByIdMedico(@PathVariable String idMedico){
+        return equiposService.getEquiposByIdMedico(idMedico);
+    }
 }

@@ -33,7 +33,7 @@ public class CiclosAntibioticoController {
         return ciclosAntibioticoService.getCiclosAntibioticoByDni(dni);
     }
 
-    @GetMapping("/ciclos-antibiotico/dniFecha/{dni}/{fecha}")
+    @GetMapping("/ciclosAntibioticos/dniFecha/{dni}/{fecha}")
     public List<CicloAntibiotico> getCiclosAntibioticoByDni(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
         Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
         return ciclosAntibioticoService.getCiclosAntibioticoByDniAndFechaInicio(dni, date);
@@ -48,5 +48,11 @@ public class CiclosAntibioticoController {
     public CicloAntibiotico getCicloAntibioticoById(@PathVariable String id){
         Integer idI = Integer.valueOf(id);
         return ciclosAntibioticoService.getCiclosAntibioticoById(idI);
+    }
+
+    @GetMapping("/ciclosAntibioticos/idUsuario/{idUsuario}/{fecha}")
+    public List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(@PathVariable String idUsuario, @PathVariable Date fecha)  {
+
+        return ciclosAntibioticoService.getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(idUsuario, fecha);
     }
 }

@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface AntecedentesService {
 
-    public Antecedente getAntecedenteById(Integer id);
-    public List<Antecedente> getAntecedentes();
-    public List<Antecedente> getAntecedentesByDni(String dni);
-    public List<Antecedente> getAntecedentesByDniAndFecha(String dni, Date fecha);
-
+     Antecedente getAntecedenteById(Integer id);
+     List<Antecedente> getAntecedentes();
+     List<Antecedente> getAntecedentesByDni(String dni);
+     List<Antecedente> getAntecedentesByDniAndFecha(String dni, Date fecha);
+     List<Antecedente> getAntecedentesByIdUsuarioAndFecha(String idUsuario, Date fecha);
 
 }

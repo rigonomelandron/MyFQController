@@ -47,4 +47,12 @@ public class EventosController {
         return eventosService.getEventosDniPacienteAndFecha(dni, date);
     }
 
+    @GetMapping("/eventos/idUsuario/{idUsuario}/{fecha}")
+    public List<Evento> eventosByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
+
+
+        return eventosService.getEventosIdUsuarioFecha(idUsuario, fecha);
+    }
+
+
 }

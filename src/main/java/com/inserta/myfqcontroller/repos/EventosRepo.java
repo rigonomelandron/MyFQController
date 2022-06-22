@@ -15,4 +15,6 @@ public interface EventosRepo extends JpaRepository<Evento, Integer> {
     public List<Evento> findByPaciente_Dni(String dni);
     public List<Evento> findByPaciente_DniAndFecha(String dni, Date fecha);
 
+    public List<Evento> findByPaciente_IdUsuarioAndFecha(String dni, Date fecha);
+
 }

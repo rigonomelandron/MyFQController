@@ -23,8 +23,15 @@ public class DoctoresController {
 
 
     @GetMapping("/doctores/colegiado/{numero}")
-    public Doctor pacienteByDni(@PathVariable String numero){
+    public Doctor DoctorByDni(@PathVariable String numero){
         return doctoresService.getDoctorByNumColegiado(numero);
 
     }
+    @GetMapping("/doctores/usuario/{idUsuario}")
+    public Doctor doctorByIdUsuario(@PathVariable String idUsuario){
+        return doctoresService.getDoctorByNumColegiado(idUsuario);
+
+    }
+
+
 }

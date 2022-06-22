@@ -8,8 +8,10 @@ import java.util.List;
 
 public interface DeportesService {
 
-    public List<Deporte> listado();
-    public Deporte deporteById(int id);
-    public List<Deporte> deportesByDni(String dni);
-    public List<Deporte> deportesByDniFecha(String dni, Date fecha);
+     List<Deporte> listado();
+     Deporte deporteById(int id);
+     List<Deporte> deportesByDni(String dni);
+     List<Deporte> deportesByDniFecha(String dni, Date fecha);
+        List<Deporte> deportesByIdUsuarioFecha(String idUsuario, Date fecha);
+
 }

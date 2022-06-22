@@ -7,10 +7,11 @@ import java.util.Date;
 import java.util.List;
 
 public interface GlicadasService {
-    public List<Glicada> getGlicadas();
-    public Glicada getGlicadasById(Integer id);
-    public List<Glicada> getGlicadasByDni(String dni);
-    public List<Glicada> getGlicadasByDniAndFecha(String dni, Date fecha);
-    public List<Glicada> findAllByFechaBetween(Date desde, Date hasta);
+     List<Glicada> getGlicadas();
+     Glicada getGlicadasById(Integer id);
+     List<Glicada> getGlicadasByDni(String dni);
+     List<Glicada> getGlicadasByDniAndFecha(String dni, Date fecha);
+     List<Glicada> findAllByFechaBetween(Date desde, Date hasta);
+     List<Glicada> findAllByPacienteIdUsuarioAndFecha(String idUsuario, Date fecha);
 
 }

@@ -46,4 +46,9 @@ public class TratamientosCronicosController {
         return tratamientosCronicosService.tratamientoByDniFecha(dni, date);
     }
 
+    @GetMapping("/tratamientos/idUsuario/{idUsuario}/{fechaInicio}")
+    public List<TratamientoCronico> tratamientoByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fechaInicio) {
+        return tratamientosCronicosService.tratamientoByIdUsuarioFecha(idUsuario, fechaInicio);
+    }
+
 }

@@ -17,4 +17,6 @@ public interface TensionesRepos extends JpaRepository<Tension, Integer> {
     public List<Tension> findByPaciente_Dni(String dni);
     public List<Tension> findByPaciente_DniAndFecha(String dni,@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME,pattern = "yyyy-MM-dd") Date fecha);
     public List<Tension> findAllByFechaBetween(Date desde,Date hasta);
+
+    public List<Tension> findAllByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha);
 }

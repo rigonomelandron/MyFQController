@@ -11,4 +11,5 @@ import java.util.List;
 @RepositoryRestResource(path = "doctores")
 public interface DoctoresRepo extends JpaRepository<Doctor, String> {
     public Doctor findByNumColegiado(String numColegiado);
+    public Doctor findByIdUsuario(String id_usuario);
 }

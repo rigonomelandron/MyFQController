@@ -42,5 +42,10 @@ public class AntecedentesController {
         Integer idI = Integer.valueOf(id);
         return antecedentesService.getAntecedenteById(idI);
     }
+    @GetMapping("/antecedentes/idUsuario/{idUsuario}/{fecha}")
+    public List<Antecedente> getAntecedentesByIdUsuarioAndFecha(@PathVariable String idUsuario, @PathVariable Date fecha)  {
+
+        return antecedentesService.getAntecedentesByIdUsuarioAndFecha(idUsuario, fecha);
+    }
 
 }

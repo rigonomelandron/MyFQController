@@ -15,4 +15,5 @@ import java.util.List;
 public interface AntecedentesRepo extends JpaRepository<Antecedente, Integer> {
     public List<Antecedente> findByPaciente_Dni(String dni);
     public List<Antecedente> findByPaciente_DniAndFecha(String dni, Date fecha);
+    public List<Antecedente> findByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha);
 }

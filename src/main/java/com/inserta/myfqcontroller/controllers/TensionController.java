@@ -39,7 +39,7 @@ public class TensionController {
 
     @GetMapping("/tension/dniFecha/{dni}/{fecha}")
 
-    public List<Tension> deporteByUserFecha(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
+    public List<Tension> tensionByUserFecha(@PathVariable String dni, @PathVariable String fecha) throws ParseException {
 
 
         Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
@@ -54,8 +54,11 @@ public class TensionController {
 
     @PostMapping("/tension")
     public Tension guardarTension(@RequestBody Tension tension){
-
-
         return tension;
+    }
+    @GetMapping("/tension/idUsuario/{idUsuario}/{fecha}")
+    public List<Tension> getByIdUsuarioAndDate(@PathVariable String idUsuario, @PathVariable Date fecha)  {
+
+        return tensionService.findAllByPaciente_IdUsuarioAndFecha(idUsuario, fecha);
     }
 }

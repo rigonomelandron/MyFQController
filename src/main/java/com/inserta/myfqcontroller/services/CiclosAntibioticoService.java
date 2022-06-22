@@ -13,6 +13,7 @@ public interface CiclosAntibioticoService {
     public List<CicloAntibiotico> getCiclosAntibioticoByDniAndFechaInicio(String dni, Date fecha);
     public List<CicloAntibiotico> getCiclosAntibioticoByEsIntravenosoTrue();
     public CicloAntibiotico getCiclosAntibioticoById(Integer id);
+    public List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(String dni, Date fecha);
 
 
 }

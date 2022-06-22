@@ -15,4 +15,6 @@ import java.util.List;
 public interface TratamientosCronicosRepos extends JpaRepository<TratamientoCronico,Integer> {
     public List<TratamientoCronico> findByPaciente_Dni(String dni);
     public List<TratamientoCronico> findByPaciente_DniAndFecha(String dni, Date fecha);
+
+    public List<TratamientoCronico> findByPaciente_idUsuarioAndFecha(String idUsuario, Date fechaInicio);
 }

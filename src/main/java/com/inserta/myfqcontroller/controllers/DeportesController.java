@@ -46,4 +46,10 @@ public class DeportesController {
         return deportesService.deportesByDniFecha(dni, date);
     }
 
+    @GetMapping ("/deportes/idUsuario/{idUsuario}/{fecha}")
+    public List<Deporte> deporteByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
+
+        return deportesService.deportesByIdUsuarioFecha(idUsuario, fecha);
+    }
+
 }

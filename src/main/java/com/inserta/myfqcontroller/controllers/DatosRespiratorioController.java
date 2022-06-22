@@ -51,7 +51,7 @@ public class DatosRespiratorioController {
 
 
     @GetMapping("/datos-respiratorios/idUsuario/{idUsuario}/{fecha}")
-    public List<DatoRespiratorio> findAllByPacienteIdUsuario(@PathVariable String idUsuario, @PathVariable Date fecha) throws ParseException {
+    public List<DatoRespiratorio> findAllByPacienteIdUsuario(@PathVariable String idUsuario, @PathVariable Date fecha)  {
 
         System.out.println(fecha);
         return datosRespiratoriosService.findAllByPacienteIdUsuarioFecha(idUsuario ,fecha);

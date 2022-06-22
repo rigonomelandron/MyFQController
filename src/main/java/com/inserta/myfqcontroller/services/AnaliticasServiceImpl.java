@@ -33,4 +33,9 @@ public class AnaliticasServiceImpl implements AnaliticasService{
 
         return analiticasRepo.findByPaciente_DniAndFecha(dni, fecha);
     }
+
+    @Override
+    public List<Analitica> getAnaliticasByIdUsuarioFecha(String idUsuario, Date fecha) {
+        return analiticasRepo.findAllByPaciente_IdUsuarioEqualsAndFecha(idUsuario, fecha);
+    }
 }

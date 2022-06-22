@@ -11,8 +11,9 @@ import java.util.List;
 
 public interface TratamientosCronicosService {
 
-    public List<TratamientoCronico> listado();
-    public TratamientoCronico tratamientoById(int id);
-    public List<TratamientoCronico> tratamientoByDni(String dni);
-    public List<TratamientoCronico> tratamientoByDniFecha(String dni, Date fecha);
+    List<TratamientoCronico> listado();
+    TratamientoCronico tratamientoById(int id);
+    List<TratamientoCronico> tratamientoByDni(String dni);
+    List<TratamientoCronico> tratamientoByDniFecha(String dni, Date fecha);
+    List<TratamientoCronico> tratamientoByIdUsuarioFecha(String idUsuario, Date fechaInicio);
 }

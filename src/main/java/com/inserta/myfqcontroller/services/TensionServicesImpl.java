@@ -38,4 +38,9 @@ public class TensionServicesImpl implements TensionService{
     public List<Tension> findAllByFechaBetween(Date desde, Date hasta) {
         return tensionesRepos.findAllByFechaBetween(desde,hasta);
     }
+
+    @Override
+    public List<Tension> findAllByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha) {
+        return tensionesRepos.findAllByPaciente_IdUsuarioAndFecha(idUsuario,fecha);
+    }
 }

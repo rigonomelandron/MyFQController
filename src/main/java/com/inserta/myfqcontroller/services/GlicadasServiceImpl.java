@@ -37,4 +37,10 @@ public class GlicadasServiceImpl implements GlicadasService{
     public List<Glicada> findAllByFechaBetween(Date desde, Date hasta) {
         return glicadasRepo.findAllByFechaBetween(desde,hasta);
     }
+
+    @Override
+    public List<Glicada> findAllByPacienteIdUsuarioAndFecha(String idUsuario, Date fecha) {
+        return glicadasRepo.findAllByPaciente_IdUsuarioAndFecha(idUsuario,fecha);
+    }
+
 }

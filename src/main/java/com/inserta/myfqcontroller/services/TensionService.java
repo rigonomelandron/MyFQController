@@ -9,10 +9,11 @@ import java.util.List;
 
 public interface TensionService {
 
-    public List<Tension> listado();
-    public Tension tensionById(int id);
-    public List<Tension> tensionByDni(String dni);
-    public List<Tension> tensionByDniFecha(String dni, Date fecha);
+    List<Tension> listado();
+    Tension tensionById(int id);
+    List<Tension> tensionByDni(String dni);
+    List<Tension> tensionByDniFecha(String dni, Date fecha);
 
     List<Tension> findAllByFechaBetween(Date desde, Date hasta);
+    List<Tension> findAllByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha);
 }

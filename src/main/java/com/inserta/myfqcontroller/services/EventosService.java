@@ -8,8 +8,10 @@ import java.util.Date;
 import java.util.List;
 
 public interface EventosService {
-    public List<Evento> getEventos();
-    public Evento getEventosById(Integer id);
-    public List<Evento> getEventosDniPaciente(String dni);
-    public List<Evento> getEventosDniPacienteAndFecha(String dni, Date fecha);
+     List<Evento> getEventos();
+     Evento getEventosById(Integer id);
+     List<Evento> getEventosDniPaciente(String dni);
+     List<Evento> getEventosDniPacienteAndFecha(String dni, Date fecha);
+     List<Evento> getEventosIdUsuarioFecha(String idUsuario, Date fecha);
+
 }
