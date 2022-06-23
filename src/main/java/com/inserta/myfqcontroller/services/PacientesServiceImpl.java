@@ -26,5 +26,10 @@ public class PacientesServiceImpl implements PacientesService{
         return pacientesRepo.findByIdUsuario(username);
     }
 
+    @Override
+    public Paciente crearPaciente(Paciente paciente) {
+        return pacientesRepo.save(paciente);
+    }
+
 
 }

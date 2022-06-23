@@ -2,13 +2,11 @@ package com.inserta.myfqcontroller.controllers;
 
 import com.inserta.myfqcontroller.models.DatoRespiratorio;
 import com.inserta.myfqcontroller.models.Paciente;
+import com.inserta.myfqcontroller.models.Usuario;
 import com.inserta.myfqcontroller.services.DatosRespiratoriosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -44,9 +42,9 @@ public class DatosRespiratorioController {
         Integer idI = Integer.valueOf(id);
         return datosRespiratoriosService.getDatoRespiratorioById(idI);
     }
-    @GetMapping("/datos-respiratorios/fechas/{desde}/{hasta}")
-    public  List<DatoRespiratorio> findAllByFechaBetween(@PathVariable Date desde, @PathVariable  Date hasta)  {
-        return datosRespiratoriosService.findAllByFechaBetween(desde,hasta);
+    @GetMapping("/datos-respiratorios/fechas/{idUsuario}/{desde}/{hasta}")
+    public  List<DatoRespiratorio> findAllByFechaBetween(@PathVariable String idUsuario, @PathVariable Date desde, @PathVariable  Date hasta)  {
+        return datosRespiratoriosService.findAllByFechaBetween( idUsuario,desde,hasta);
     }
 
 
@@ -55,5 +53,9 @@ public class DatosRespiratorioController {
 
         System.out.println(fecha);
         return datosRespiratoriosService.findAllByPacienteIdUsuarioFecha(idUsuario ,fecha);
+    }
+    @PostMapping("/datos-respiratorios")
+    public DatoRespiratorio createDatoRespiratorio(@RequestBody DatoRespiratorio datoRespiratorio){
+        return datosRespiratoriosService.crearDatoRespiratorio(datoRespiratorio);
     }
 }

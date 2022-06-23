@@ -5,10 +5,7 @@ package com.inserta.myfqcontroller.controllers;
 import com.inserta.myfqcontroller.models.Paciente;
 import com.inserta.myfqcontroller.services.PacientesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -37,6 +34,10 @@ public class PacientesController {
     public Paciente pacienteByUserName(@PathVariable String username){
         return pacientesService.getPacienteByIdUsuario(username);
 
+    }
+    @PostMapping("/pacientes/crear")
+    public Paciente crearPaciente(@RequestBody Paciente paciente){
+        return pacientesService.crearPaciente(paciente);
     }
 
 

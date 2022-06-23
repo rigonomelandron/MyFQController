@@ -9,12 +9,12 @@ import java.util.Date;
 import java.util.List;
 
 public interface DatosRespiratoriosService {
-    public List<DatoRespiratorio> getDatosRespiratorios();
-    public List<DatoRespiratorio> getDatosRespiratoriosByDni(String dni);
-    public List<DatoRespiratorio> getDatosRespiratoriosByDniAndFecha(String dni, Date fecha);
-    public DatoRespiratorio getDatoRespiratorioById(Integer id);
-    public List<DatoRespiratorio> findAllByFechaBetween(Date desde, Date hasta);
+     List<DatoRespiratorio> getDatosRespiratorios();
+     List<DatoRespiratorio> getDatosRespiratoriosByDni(String dni);
+     List<DatoRespiratorio> getDatosRespiratoriosByDniAndFecha(String dni, Date fecha);
+     DatoRespiratorio getDatoRespiratorioById(Integer id);
+     List<DatoRespiratorio> findAllByFechaBetween(String idUsuario, Date desde, Date hasta);
+     List<DatoRespiratorio> findAllByPacienteIdUsuarioFecha(String idUsuario, Date fecha) ;
 
-
-    public List<DatoRespiratorio> findAllByPacienteIdUsuarioFecha(String idUsuario, Date fecha) ;
+     DatoRespiratorio crearDatoRespiratorio(DatoRespiratorio datoRespiratorio);
 }
