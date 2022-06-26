@@ -5,10 +5,7 @@ package com.inserta.myfqcontroller.controllers;
 import com.inserta.myfqcontroller.models.Analitica;
 import com.inserta.myfqcontroller.services.AnaliticasService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,6 +45,11 @@ public class AnaliticaController {
     @GetMapping("/analiticas/idUsuarioFecha/{idUsuario}/{fecha}")
     public List<Analitica> analiticasByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
         return analiticasService.getAnaliticasByIdUsuarioFecha(idUsuario, fecha);
+    }
+
+    @PostMapping("/analiticas")
+    public Analitica createAnalitica(@RequestBody Analitica analitica){
+        return analiticasService.crearAnalitica(analitica);
     }
 
 }

@@ -4,10 +4,7 @@ import com.inserta.myfqcontroller.models.Antecedente;
 import com.inserta.myfqcontroller.services.AntecedentesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -46,6 +43,10 @@ public class AntecedentesController {
     public List<Antecedente> getAntecedentesByIdUsuarioAndFecha(@PathVariable String idUsuario, @PathVariable Date fecha)  {
 
         return antecedentesService.getAntecedentesByIdUsuarioAndFecha(idUsuario, fecha);
+    }
+    @PostMapping("/antecedente")
+    public Antecedente crearAntecedente(@RequestBody Antecedente antecedente) {
+        return antecedentesService.crearAntecedente(antecedente);
     }
 
 }

@@ -38,4 +38,9 @@ public class EventosServiceImpl implements EventosService {
     public List<Evento> getEventosIdUsuarioFecha(String idUsuario, Date fecha) {
         return eventosRepo.findByPaciente_IdUsuarioAndFecha(idUsuario, fecha);
     }
+
+    @Override
+    public Evento createEvento(Evento evento) {
+        return eventosRepo.save(evento);
+    }
 }

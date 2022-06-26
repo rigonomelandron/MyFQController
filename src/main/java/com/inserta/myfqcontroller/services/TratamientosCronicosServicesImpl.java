@@ -38,4 +38,9 @@ public class TratamientosCronicosServicesImpl implements TratamientosCronicosSer
     public List<TratamientoCronico> tratamientoByIdUsuarioFecha(String idUsuario, Date fechaInicio) {
         return tratamientosCronicosRepos.findByPaciente_idUsuarioAndFecha(idUsuario,fechaInicio);
     }
+
+    @Override
+    public TratamientoCronico crearTratamientoCronico(TratamientoCronico tratamientoCronico) {
+        return tratamientosCronicosRepos.save(tratamientoCronico);
+    }
 }

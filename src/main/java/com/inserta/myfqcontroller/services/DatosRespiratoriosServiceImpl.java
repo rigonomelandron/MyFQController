@@ -54,5 +54,10 @@ public class DatosRespiratoriosServiceImpl implements DatosRespiratoriosService{
         return datosRespiratoriosRepo.save(datoRespiratorio);
     }
 
+    @Override
+    public List<DatoRespiratorio> getByIdUsuario(String idUsuario) {
+        return datosRespiratoriosRepo.findAllByPaciente_IdUsuario(idUsuario);
+    }
+
 
 }

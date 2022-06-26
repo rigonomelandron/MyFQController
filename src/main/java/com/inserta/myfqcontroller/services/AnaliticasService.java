@@ -6,10 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 public interface AnaliticasService {
-    public List<Analitica> getAnaliticas();
-    public Analitica getAnaliticasById(Integer id);
-    public List<Analitica> getAnaliticasByDni(String dni);
-    public List<Analitica> getAnaliticasByDniAndFecha(String dni, Date fecha);
-    public List<Analitica> getAnaliticasByIdUsuarioFecha(String idUsuario, Date fecha);
+     List<Analitica> getAnaliticas();
+     Analitica getAnaliticasById(Integer id);
+     List<Analitica> getAnaliticasByDni(String dni);
+     List<Analitica> getAnaliticasByDniAndFecha(String dni, Date fecha);
+     List<Analitica> getAnaliticasByIdUsuarioFecha(String idUsuario, Date fecha);
+        Analitica crearAnalitica(Analitica analitica);
 
 }

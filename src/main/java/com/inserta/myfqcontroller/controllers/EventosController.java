@@ -5,10 +5,7 @@ package com.inserta.myfqcontroller.controllers;
 import com.inserta.myfqcontroller.models.Evento;
 import com.inserta.myfqcontroller.services.EventosService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -52,6 +49,10 @@ public class EventosController {
 
 
         return eventosService.getEventosIdUsuarioFecha(idUsuario, fecha);
+    }
+    @PostMapping("/evento")
+    public Evento createEvento(@RequestBody Evento evento) {
+        return eventosService.createEvento(evento);
     }
 
 

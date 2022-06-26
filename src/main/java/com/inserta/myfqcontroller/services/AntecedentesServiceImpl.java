@@ -38,4 +38,10 @@ public class AntecedentesServiceImpl implements AntecedentesService{
     public List<Antecedente> getAntecedentesByIdUsuarioAndFecha(String idUsuario, Date fecha) {
         return antecedentesRepo.findByPaciente_IdUsuarioAndFecha(idUsuario, fecha);
     }
+
+    @Override
+    public Antecedente crearAntecedente(Antecedente antecedente) {
+        return antecedentesRepo.save(antecedente);
+    }
+
 }

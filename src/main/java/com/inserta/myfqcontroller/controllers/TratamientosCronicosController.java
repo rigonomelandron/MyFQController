@@ -5,10 +5,7 @@ package com.inserta.myfqcontroller.controllers;
 import com.inserta.myfqcontroller.models.TratamientoCronico;
 import com.inserta.myfqcontroller.services.TratamientosCronicosService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -49,6 +46,10 @@ public class TratamientosCronicosController {
     @GetMapping("/tratamientos/idUsuario/{idUsuario}/{fechaInicio}")
     public List<TratamientoCronico> tratamientoByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fechaInicio) {
         return tratamientosCronicosService.tratamientoByIdUsuarioFecha(idUsuario, fechaInicio);
+    }
+    @PostMapping("/tratamiento")
+    public TratamientoCronico nuevoTratamiento(@RequestBody TratamientoCronico tratamientoCronico) {
+        return tratamientosCronicosService.crearTratamientoCronico(tratamientoCronico);
     }
 
 }

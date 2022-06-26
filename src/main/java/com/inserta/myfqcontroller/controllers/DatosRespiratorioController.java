@@ -58,4 +58,8 @@ public class DatosRespiratorioController {
     public DatoRespiratorio createDatoRespiratorio(@RequestBody DatoRespiratorio datoRespiratorio){
         return datosRespiratoriosService.crearDatoRespiratorio(datoRespiratorio);
     }
+    @GetMapping("/datos-respiratorios/usuarioId/{idUsuario}")
+    public List<DatoRespiratorio> getByIdUsuario(@PathVariable String idUsuario){
+        return datosRespiratoriosService.getByIdUsuario(idUsuario);
+    }
 }

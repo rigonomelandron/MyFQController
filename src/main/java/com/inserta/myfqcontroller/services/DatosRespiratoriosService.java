@@ -17,4 +17,5 @@ public interface DatosRespiratoriosService {
      List<DatoRespiratorio> findAllByPacienteIdUsuarioFecha(String idUsuario, Date fecha) ;
 
      DatoRespiratorio crearDatoRespiratorio(DatoRespiratorio datoRespiratorio);
+     List<DatoRespiratorio> getByIdUsuario(String idUsuario);
 }

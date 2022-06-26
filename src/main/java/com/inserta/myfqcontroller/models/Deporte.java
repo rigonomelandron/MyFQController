@@ -25,6 +25,7 @@ public class Deporte {
     private Paciente paciente;
     private String tipo;
     private float calorias;
+    private int ppmMedia;
     private int ppmMaxima;
     private int tiempo;
 }

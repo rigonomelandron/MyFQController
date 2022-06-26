@@ -19,5 +19,6 @@ public interface DatosRespiratoriosRepo extends JpaRepository<DatoRespiratorio, 
     public List<DatoRespiratorio> findAllByPaciente_IdUsuarioAndFechaBetween(String idUsuario ,Date desde, Date hasta);
      public List<DatoRespiratorio> findAllByPaciente_DniAndFecha(String dni, Date fecha);
     public List<DatoRespiratorio> findAllByPaciente_IdUsuarioEqualsAndFecha(String idUsuario, Date fecha);
+    public List<DatoRespiratorio> findAllByPaciente_IdUsuario(String idUsuario);
 
 }

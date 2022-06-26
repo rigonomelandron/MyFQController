@@ -13,5 +13,6 @@ public interface EventosService {
      List<Evento> getEventosDniPaciente(String dni);
      List<Evento> getEventosDniPacienteAndFecha(String dni, Date fecha);
      List<Evento> getEventosIdUsuarioFecha(String idUsuario, Date fecha);
+     Evento createEvento(Evento evento);
 
 }
