@@ -32,4 +32,8 @@ public class EquiposController {
     public List<Equipo> getEquiposByIdMedico(@PathVariable String idMedico){
         return equiposService.getEquiposByIdMedico(idMedico);
     }
+    @GetMapping("/equipos/idPaciente/{idPaciente}")
+    public Equipo getEquiposByIdPaciente(@PathVariable String idPaciente){
+        return equiposService.getEquiposByIdPaciente(idPaciente);
+    }
 }

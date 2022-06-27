@@ -12,4 +12,5 @@ import java.util.List;
 public interface EquiposRepo extends JpaRepository<Equipo, Integer> {
 
     public List<Equipo> findAllByIdMedico(String idMedico);
+    public Equipo findByIdPaciente(String id);
 }

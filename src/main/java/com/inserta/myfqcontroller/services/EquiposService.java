@@ -5,7 +5,8 @@ import com.inserta.myfqcontroller.models.Equipo;
 import java.util.List;
 
 public interface EquiposService {
-    public List<Equipo> getEquipos();
-    public Equipo getEquiposById(Integer id);
-    public List<Equipo> getEquiposByIdMedico(String idMedico);
+     List<Equipo> getEquipos();
+     Equipo getEquiposById(Integer id);
+     List<Equipo> getEquiposByIdMedico(String idMedico);
+     Equipo getEquiposByIdPaciente(String id);
 }

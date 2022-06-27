@@ -39,6 +39,10 @@ public class PacientesController {
     public Paciente crearPaciente(@RequestBody Paciente paciente){
         return pacientesService.crearPaciente(paciente);
     }
+    @PatchMapping("/pacientes/modificar")
+    public Paciente modificarPaciente(@RequestBody Paciente paciente){
+        return pacientesService.modificarPaciente(paciente);
+    }
 
 
 }

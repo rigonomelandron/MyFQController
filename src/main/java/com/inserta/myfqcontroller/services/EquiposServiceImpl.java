@@ -28,4 +28,9 @@ public class EquiposServiceImpl implements EquiposService{
     public List<Equipo> getEquiposByIdMedico(String idMedico) {
         return equiposRepo.findAllByIdMedico(idMedico);
     }
+
+    @Override
+    public Equipo getEquiposByIdPaciente(String id) {
+        return equiposRepo.findByIdPaciente(id);
+    }
 }

@@ -31,5 +31,10 @@ public class PacientesServiceImpl implements PacientesService{
         return pacientesRepo.save(paciente);
     }
 
+    @Override
+    public Paciente modificarPaciente( Paciente paciente) {
+        return pacientesRepo.save( paciente);
+    }
+
 
 }
