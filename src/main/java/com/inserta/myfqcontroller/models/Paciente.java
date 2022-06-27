@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Data
@@ -17,6 +18,7 @@ public class Paciente {
     @Column(nullable = false)
     private String nombre;
     private String email;
+    private Date fechaNacimiento;
     private String genero;
     private double peso;
     private double altura;
