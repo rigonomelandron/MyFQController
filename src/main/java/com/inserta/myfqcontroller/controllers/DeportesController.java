@@ -5,10 +5,7 @@ package com.inserta.myfqcontroller.controllers;
 import com.inserta.myfqcontroller.models.Deporte;
 import com.inserta.myfqcontroller.services.DeportesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -50,6 +47,10 @@ public class DeportesController {
     public List<Deporte> deporteByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
 
         return deportesService.deportesByIdUsuarioFecha(idUsuario, fecha);
+    }
+    @PostMapping("/deportes")
+    public Deporte addDeporte(@RequestBody Deporte deporte){
+        return deportesService.addDeporte(deporte);
     }
 
 }

@@ -40,4 +40,9 @@ public class DeportesServicesImpl implements DeportesService{
         return deportesRepo.findByPaciente_IdUsuarioAndFecha(idUsuario,fecha);
     }
 
+    @Override
+    public Deporte addDeporte(Deporte deporte) {
+        return deportesRepo.save(deporte);
+    }
+
 }

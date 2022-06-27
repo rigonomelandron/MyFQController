@@ -12,6 +12,8 @@ public interface DeportesService {
      Deporte deporteById(int id);
      List<Deporte> deportesByDni(String dni);
      List<Deporte> deportesByDniFecha(String dni, Date fecha);
-        List<Deporte> deportesByIdUsuarioFecha(String idUsuario, Date fecha);
+     List<Deporte> deportesByIdUsuarioFecha(String idUsuario, Date fecha);
+     Deporte addDeporte(Deporte deporte);
+
 
 }
