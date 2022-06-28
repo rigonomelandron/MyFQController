@@ -29,7 +29,7 @@ public class DoctoresController {
     }
     @GetMapping("/doctores/usuario/{idUsuario}")
     public Doctor doctorByIdUsuario(@PathVariable String idUsuario){
-        return doctoresService.getDoctorByNumColegiado(idUsuario);
+        return doctoresService.getDoctorByIdUsuario(idUsuario);
 
     }
 

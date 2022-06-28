@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 @RepositoryRestResource(path = "datos-respiratorios")
 public interface DatosRespiratoriosRepo extends JpaRepository<DatoRespiratorio, Integer> {
-    public List<DatoRespiratorio> findByPaciente_Dni(String dni);
+    public List<DatoRespiratorio> findAllByPaciente_Dni(String dni);
     public List<DatoRespiratorio> findByPaciente_DniAndFecha(String dni, Date fecha);
     public List<DatoRespiratorio> findAllByPaciente_IdUsuarioAndFechaBetween(String idUsuario ,Date desde, Date hasta);
      public List<DatoRespiratorio> findAllByPaciente_DniAndFecha(String dni, Date fecha);

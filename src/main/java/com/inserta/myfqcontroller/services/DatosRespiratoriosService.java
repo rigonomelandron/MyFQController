@@ -18,4 +18,5 @@ public interface DatosRespiratoriosService {
 
      DatoRespiratorio crearDatoRespiratorio(DatoRespiratorio datoRespiratorio);
      List<DatoRespiratorio> getByIdUsuario(String idUsuario);
+
 }

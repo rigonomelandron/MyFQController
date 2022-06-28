@@ -25,7 +25,7 @@ public class DatosRespiratoriosServiceImpl implements DatosRespiratoriosService{
 
     @Override
     public List<DatoRespiratorio> getDatosRespiratoriosByDni(String dni) {
-        return datosRespiratoriosRepo.findByPaciente_Dni(dni);
+        return datosRespiratoriosRepo.findAllByPaciente_Dni(dni);
     }
 
     @Override
@@ -58,6 +58,8 @@ public class DatosRespiratoriosServiceImpl implements DatosRespiratoriosService{
     public List<DatoRespiratorio> getByIdUsuario(String idUsuario) {
         return datosRespiratoriosRepo.findAllByPaciente_IdUsuario(idUsuario);
     }
+
+
 
 
 }

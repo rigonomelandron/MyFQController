@@ -28,7 +28,7 @@ public class DatosRespiratorioController {
 
     @GetMapping("/datos-respiratorios/dni/{dni}")
     public List<DatoRespiratorio> getDatosRespiratoriosByDni(@PathVariable String dni){
-        return datosRespiratoriosService.getDatosRespiratorios();
+        return datosRespiratoriosService.getDatosRespiratoriosByDni(dni);
     }
 
     @GetMapping("/datos-respiratorios/dniFecha/{dni}/{fecha}")
