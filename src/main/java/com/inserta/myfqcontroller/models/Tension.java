@@ -18,6 +18,7 @@ public class Tension {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(columnDefinition = "TIMESTAMP")
+    @Temporal(TemporalType.DATE)
     private Date fecha;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")

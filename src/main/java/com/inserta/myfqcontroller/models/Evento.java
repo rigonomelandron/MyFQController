@@ -16,6 +16,7 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(columnDefinition = "TIMESTAMP")
+    @Temporal(TemporalType.DATE)
     private Date fecha;
     @ManyToOne
     @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")

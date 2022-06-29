@@ -23,6 +23,7 @@ public class TratamientoCronico {
     private Paciente paciente;
     private String descripcion;
     @Column(columnDefinition = "TIMESTAMP")
+    @Temporal(TemporalType.DATE)
     private Date fecha;
     private String archivo;
     private boolean oral;

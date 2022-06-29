@@ -22,7 +22,9 @@ public class CicloAntibiotico {
     String antibiotico;
     boolean esIntravenoso;
     @Column(columnDefinition = "TIMESTAMP")
+    @Temporal(TemporalType.DATE)
     private Date fechaInicio;
     @Column(columnDefinition = "TIMESTAMP")
+    @Temporal(TemporalType.DATE)
     private Date  fechaFin;
 }

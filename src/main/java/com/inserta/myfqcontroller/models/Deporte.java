@@ -13,12 +13,14 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "deportes")
+
 public class Deporte {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(columnDefinition = "TIMESTAMP")
+    @Temporal(TemporalType.DATE)
     private Date fecha;
     @ManyToOne
     @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")

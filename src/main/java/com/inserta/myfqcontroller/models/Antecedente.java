@@ -21,6 +21,7 @@ public class Antecedente {
     @JoinColumn(name = "dni_paciente", referencedColumnName = "dni")
     private Paciente paciente;
     @Column(columnDefinition = "TIMESTAMP")
+    @Temporal(TemporalType.DATE)
     private Date fecha;
     private String diagnostico;
 
