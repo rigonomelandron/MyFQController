@@ -44,4 +44,9 @@ public class CiclosAntibioticoServiceImpl implements CiclosAntibioticoService {
     public List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(String dni, Date fecha) {
         return ciclosAntibioticosRepo.findByPaciente_IdUsuarioAndFechaInicio(dni, fecha);
     }
+
+    @Override
+    public CicloAntibiotico addCiclosAntibiotico(CicloAntibiotico cicloAntibiotico) {
+        return ciclosAntibioticosRepo.save(cicloAntibiotico);
+    }
 }

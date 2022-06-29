@@ -5,10 +5,7 @@ import com.inserta.myfqcontroller.services.CiclosAntibioticoService;
 import com.inserta.myfqcontroller.services.CiclosAntibioticoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -54,5 +51,9 @@ public class CiclosAntibioticoController {
     public List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(@PathVariable String idUsuario, @PathVariable Date fecha)  {
 
         return ciclosAntibioticoService.getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(idUsuario, fecha);
+    }
+    @PostMapping("/ciclosAntibiotico")
+    public CicloAntibiotico addCiclosAntibiotico(@RequestBody CicloAntibiotico cicloAntibiotico){
+        return ciclosAntibioticoService.addCiclosAntibiotico(cicloAntibiotico);
     }
 }

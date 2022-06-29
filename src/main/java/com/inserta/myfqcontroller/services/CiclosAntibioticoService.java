@@ -8,12 +8,13 @@ import java.util.List;
 
 public interface CiclosAntibioticoService {
 
-    public List<CicloAntibiotico> getCiclosAntibiotico();
-    public List<CicloAntibiotico> getCiclosAntibioticoByDni(String dni);
-    public List<CicloAntibiotico> getCiclosAntibioticoByDniAndFechaInicio(String dni, Date fecha);
-    public List<CicloAntibiotico> getCiclosAntibioticoByEsIntravenosoTrue();
-    public CicloAntibiotico getCiclosAntibioticoById(Integer id);
-    public List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(String dni, Date fecha);
+     List<CicloAntibiotico> getCiclosAntibiotico();
+     List<CicloAntibiotico> getCiclosAntibioticoByDni(String dni);
+     List<CicloAntibiotico> getCiclosAntibioticoByDniAndFechaInicio(String dni, Date fecha);
+     List<CicloAntibiotico> getCiclosAntibioticoByEsIntravenosoTrue();
+     CicloAntibiotico getCiclosAntibioticoById(Integer id);
+     List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(String dni, Date fecha);
+     CicloAntibiotico addCiclosAntibiotico(CicloAntibiotico cicloAntibiotico);
 
 
 }
