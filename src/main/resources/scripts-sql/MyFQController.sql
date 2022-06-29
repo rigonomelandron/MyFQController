@@ -6,7 +6,15 @@ USE MyFQController;
 
 CREATE TABLE usuarios (
     usuario VARCHAR(15) NOT NULL PRIMARY KEY,
-    pass VARCHAR(20)
+    pass VARCHAR(100) NOT NULL,
+    rol VARCHAR(20)
+    
+    
+) ENGINE = INNODB;
+
+CREATE TABLE roles (
+    id INT NOT NULL PRIMARY KEY,
+    rol VARCHAR(20)
 ) ENGINE = INNODB;
 
 CREATE TABLE doctores(
@@ -14,27 +22,29 @@ CREATE TABLE doctores(
     nombre VARCHAR(30) NOT NULL,
     email VARCHAR(30),
     id_usuario VARCHAR(15),
-    FOREIGN KEY (id_usuario) REFERENCES usuarios (usuario)
+    FOREIGN KEY (id_usuario) REFERENCES usuarios (usuario) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = INNODB;
 
 CREATE TABLE pacientes (
     dni VARCHAR(10) NOT NULL PRIMARY KEY,
     nombre VARCHAR(30) NOT NULL,
     email VARCHAR(100),
+    fecha_nacimiento DATE,
     genero CHAR,
     peso DECIMAL(4, 1),
     altura DECIMAL(4, 3),
     mutacion1 VARCHAR(40),
     mutacion2 VARCHAR(40),
     id_usuario VARCHAR(15),
-    FOREIGN KEY (id_usuario) REFERENCES usuarios (usuario)
+    FOREIGN KEY (id_usuario) REFERENCES usuarios (usuario) ON DELETE CASCADE
+   
 ) ENGINE = INNODB;
 
 CREATE TABLE equipos (
     id Int(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     id_paciente VARCHAR(10),
     id_medico VARCHAR(10),
-    FOREIGN KEY (id_paciente) REFERENCES pacientes (dni),
+    FOREIGN KEY (id_paciente) REFERENCES pacientes (dni) ON DELETE CASCADE ,
     FOREIGN KEY (id_medico) REFERENCES doctores (num_colegiado)
 ) ENGINE = INNODB;
 
@@ -43,7 +53,7 @@ CREATE TABLE antecedentes (
     dni_paciente VARCHAR(10) NOT NULL,
     fecha DATE NOT NULL,
     diagnostico VARCHAR(20),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE ciclos_antibioticos(
@@ -53,7 +63,7 @@ CREATE TABLE ciclos_antibioticos(
     es_intravenoso BOOLEAN DEFAULT false,
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE,
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE tratamientos_cronicos (
@@ -64,7 +74,7 @@ CREATE TABLE tratamientos_cronicos (
     archivo VARCHAR(50),
     oral BOOLEAN,
     inhalado BOOLEAN,
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE datos_respiratorios(
@@ -75,7 +85,7 @@ CREATE TABLE datos_respiratorios(
     fev1 DECIMAL(3, 2),
     saturacion_basal DECIMAL(4, 2),
     capacidad_aerobica DECIMAL(6, 3),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE eventos(
@@ -84,7 +94,7 @@ CREATE TABLE eventos(
     dni_paciente VARCHAR(10) NOT NULL,
     descripcion VARCHAR(60),
     importancia INT(2),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE deportes(
@@ -92,11 +102,11 @@ CREATE TABLE deportes(
     fecha DATE NOT NULL,
     dni_paciente VARCHAR(10) NOT NULL,
     tipo VARCHAR(30),
-    calorias DECIMAL(5, 2),
+    calorias DECIMAL(6, 2),
     ppm_media INT(3),
     ppm_maxima INT(3),
     tiempo INT(3),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE analiticas(
@@ -105,7 +115,7 @@ CREATE TABLE analiticas(
     dni_paciente VARCHAR(10) NOT NULL,
     tipo VARCHAR(10),
     archivo VARCHAR(50),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE tension(
@@ -114,7 +124,7 @@ CREATE TABLE tension(
     dni_paciente VARCHAR(10) NOT NULL,
     max_tension INT(2),
     min_tension INT(2),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE glicadas(
@@ -122,7 +132,7 @@ CREATE TABLE glicadas(
     fecha DATE NOT NULL,
     dni_paciente VARCHAR(10) NOT NULL,
     glicada DECIMAL(3, 2),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
 CREATE TABLE v02max(
@@ -131,9 +141,14 @@ CREATE TABLE v02max(
     dni_paciente VARCHAR(10) NOT NULL,
     v02max DECIMAL(5, 2),
     ppm_reposo INT(3),
-    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
-
+INSERT INTO
+    roles(id, rol)
+    VALUES
+   
+    ('1', 'paciente'),
+    ('2', 'doctor');
 INSERT INTO
     usuarios (usuario, pass)
 VALUES
