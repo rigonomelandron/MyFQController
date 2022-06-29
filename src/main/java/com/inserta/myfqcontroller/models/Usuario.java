@@ -22,6 +22,7 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "rol", referencedColumnName = "id")
     private Rol rol;
+    private String foto;
 
 
 
