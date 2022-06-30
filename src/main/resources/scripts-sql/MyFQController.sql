@@ -7,7 +7,8 @@ USE MyFQController;
 CREATE TABLE usuarios (
     usuario VARCHAR(15) NOT NULL PRIMARY KEY,
     pass VARCHAR(100) NOT NULL,
-    rol VARCHAR(20)
+    rol VARCHAR(20),
+    foto VARCHAR(200)
     
     
 ) ENGINE = INNODB;
@@ -71,7 +72,7 @@ CREATE TABLE tratamientos_cronicos (
     dni_paciente VARCHAR(10) NOT NULL,
     descripcion VARCHAR(60),
     fecha DATE NOT NULL,
-    archivo VARCHAR(50),
+    archivo VARCHAR(200),
     oral BOOLEAN,
     inhalado BOOLEAN,
     FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
@@ -114,7 +115,7 @@ CREATE TABLE analiticas(
     fecha DATE NOT NULL,
     dni_paciente VARCHAR(10) NOT NULL,
     tipo VARCHAR(10),
-    archivo VARCHAR(50),
+    archivo VARCHAR(200),
     FOREIGN KEY (dni_paciente) REFERENCES pacientes (dni) ON UPDATE CASCADE ON DELETE CASCADE 
 ) ENGINE = INNODB;
 
