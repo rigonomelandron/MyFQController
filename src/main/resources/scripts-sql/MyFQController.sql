@@ -149,7 +149,7 @@ INSERT INTO
     VALUES
    
     ('1', 'paciente'),
-    ('2', 'doctor');
+    ('2', 'medico');
 INSERT INTO
     usuarios (usuario, pass, rol)
 VALUES
