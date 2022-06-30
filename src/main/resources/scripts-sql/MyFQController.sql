@@ -151,11 +151,11 @@ INSERT INTO
     ('1', 'paciente'),
     ('2', 'doctor');
 INSERT INTO
-    usuarios (usuario, pass)
+    usuarios (usuario, pass, rol)
 VALUES
-    ('Medico1', '12345'),('Medico2', '55555'),
-    ('Paciente2', '11111'),
-    ('Paciente', '54321');
+    ('Medico1', '12345',2),('Medico2', '55555',2),
+    ('Paciente2', '11111',1),
+    ('Paciente', '54321',1);
 
 INSERT INTO
     pacientes (
