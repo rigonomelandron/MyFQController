@@ -22,4 +22,5 @@ public class Mensaje {
     private Date fecha;
     private String mensaje;
     private boolean isVisto;
+    private String rol;
 }
