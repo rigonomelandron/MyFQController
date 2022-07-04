@@ -45,4 +45,12 @@ public class MensajesController {
         //Date date =new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
         return mensajesService.getMensajesByIdMedicoAndFecha(idMedico,fecha);
     }
+    @PatchMapping("/mensaje/modificar")
+    public Mensaje modificarMensaje(@RequestBody Mensaje mensaje){
+        return mensajesService.modificarMensaje(mensaje);
+    }
+    @RequestMapping("/mensaje/noVisto/{idPaciente}/{visto}")
+    public List<Mensaje> mensajesByIDPacienteVisto(@PathVariable String idPaciente, @PathVariable boolean visto) {
+        return mensajesService.getMensajesByIdPacienteAndIsVisto(idPaciente,visto);
+    }
 }

@@ -13,4 +13,7 @@ public interface MensajesService {
     List<Mensaje> getMensajesByIdMedico(String idMedico);
     List<Mensaje> getMensajesByIdPacienteAndFecha(String idPaciente, Date fecha);
     List<Mensaje> getMensajesByIdMedicoAndFecha(String idPMedico, Date fecha);
+    Mensaje modificarMensaje(Mensaje mensaje);
+    List<Mensaje> getMensajesByIdPacienteAndIsVisto(String idPaciente, boolean visto);
+
 }

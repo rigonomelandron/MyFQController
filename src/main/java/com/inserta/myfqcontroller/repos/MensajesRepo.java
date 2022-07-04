@@ -15,4 +15,7 @@ public interface MensajesRepo extends JpaRepository<Mensaje, Integer> {
         List<Mensaje> findAllByIdPacienteAndFecha(String dni, Date fecha);
         List<Mensaje> findAllByIdMedicoAndFecha(String idUsuario, Date fecha);
         List<Mensaje> findAllByIdMedico(String idMedico);
+         List<Mensaje> findAllByIdPacienteAndIsVisto(String idPaciente, boolean visto);
+
+
 }

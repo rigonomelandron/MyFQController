@@ -47,5 +47,16 @@ public class MensajesServiceImpl implements MensajesService {
         return mensajesRepo.findAllByIdMedicoAndFecha(idMedico, fecha);
     }
 
+    @Override
+    public Mensaje modificarMensaje(Mensaje mensaje) {
+        return mensajesRepo.save(mensaje);
+    }
+
+    @Override
+    public List<Mensaje> getMensajesByIdPacienteAndIsVisto(String idPaciente, boolean visto) {
+        return mensajesRepo.findAllByIdPacienteAndIsVisto(idPaciente, visto);
+    }
+
+
 }
 

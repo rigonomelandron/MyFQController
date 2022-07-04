@@ -21,4 +21,5 @@ public class Mensaje {
     @Temporal(TemporalType.DATE)
     private Date fecha;
     private String mensaje;
+    private boolean isVisto;
 }
