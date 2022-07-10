@@ -15,5 +15,5 @@ public interface GlicadasRepo extends JpaRepository<Glicada, Integer> {
     public List<Glicada> findByPaciente_Dni(String dni);
     public List<Glicada> findByPaciente_DniAndFecha(String dni, Date fecha);
     public List<Glicada> findAllByFechaBetween(Date desde, Date hasta);
-    public List<Glicada> findAllByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha);
+    public List<Glicada> findAllByPaciente_IdUsuarioAndFecha(int idUsuario, Date fecha);
 }

@@ -4,16 +4,14 @@ import com.inserta.myfqcontroller.models.Equipo;
 import com.inserta.myfqcontroller.services.EquiposService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin(origins = "*")
 public class EquiposController {
     @Autowired
     EquiposService equiposService;
@@ -35,5 +33,9 @@ public class EquiposController {
     @GetMapping("/equipos/idPaciente/{idPaciente}")
     public Equipo getEquiposByIdPaciente(@PathVariable String idPaciente){
         return equiposService.getEquiposByIdPaciente(idPaciente);
+    }
+    @PostMapping("/equipos")
+    public Equipo saveEquipo(@RequestBody Equipo equipo){
+        return equiposService.saveEquipo(equipo);
     }
 }

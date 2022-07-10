@@ -39,7 +39,7 @@ public class GlicadasServiceImpl implements GlicadasService{
     }
 
     @Override
-    public List<Glicada> findAllByPacienteIdUsuarioAndFecha(String idUsuario, Date fecha) {
+    public List<Glicada> findAllByPacienteIdUsuarioAndFecha(int idUsuario, Date fecha) {
         return glicadasRepo.findAllByPaciente_IdUsuarioAndFecha(idUsuario,fecha);
     }
 

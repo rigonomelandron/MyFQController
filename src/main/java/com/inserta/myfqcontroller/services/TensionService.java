@@ -15,5 +15,5 @@ public interface TensionService {
     List<Tension> tensionByDniFecha(String dni, Date fecha);
 
     List<Tension> findAllByFechaBetween(Date desde, Date hasta);
-    List<Tension> findAllByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha);
+    List<Tension> findAllByPaciente_IdUsuarioAndFecha(int idUsuario, Date fecha);
 }

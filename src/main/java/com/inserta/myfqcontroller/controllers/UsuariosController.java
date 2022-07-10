@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("api/v1")
+@CrossOrigin(origins = "*")
 public class UsuariosController {
 
     private final Logger log = LoggerFactory.getLogger(UsuariosController.class);
@@ -39,23 +40,23 @@ public class UsuariosController {
          return usuariosService.listado();
     }
 
+    @GetMapping("/usuarios/id/{id}")
+    public Usuario usuarioByUser(@PathVariable int id){
+        return usuariosService.usuarioById(id);
+    }
+
     @GetMapping("/usuarios/user/{user}")
     public Usuario usuarioByUser(@PathVariable String user){
-        return usuariosService.usuarioById(user);
+        return usuariosService.usuarioByUser(user);
     }
 
-    @GetMapping("/usuarios/userPass/{usuario}/{pass}")
-
-    public Usuario usuarioByUserPass(@PathVariable String usuario, @PathVariable String pass){
-        return usuariosService.usuario(usuario,pass);
-    }
     @PostMapping("/usuario/crear")
     public Usuario crearUsuario(@RequestBody Usuario usuario){
 
         return usuariosService.crearUsuario(usuario);
     }
     @PostMapping("/usuario/upload")
-    public ResponseEntity<?> upload(@RequestParam("archivo") MultipartFile archivo, @RequestParam("id") String id){
+    public ResponseEntity<?> upload(@RequestParam("archivo") MultipartFile archivo, @RequestParam("id") int id){
         Map<String, Object> response = new HashMap<>();
 
         Usuario usuario = usuariosService.usuarioById(id);

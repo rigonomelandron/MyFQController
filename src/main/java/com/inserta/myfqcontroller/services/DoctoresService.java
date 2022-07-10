@@ -5,8 +5,11 @@ import com.inserta.myfqcontroller.models.Doctor;
 import java.util.List;
 
 public interface DoctoresService {
-    public List<Doctor> getDoctores();
-    public Doctor getDoctorByNumColegiado(String numColegiado);
-    public Doctor getDoctorByIdUsuario(String idUsuario);
+     List<Doctor> getDoctores();
+     Doctor getDoctorByNumColegiado(String numColegiado);
+     Doctor getDoctorByIdUsuario(int idUsuario);
 
+     Doctor saveDoctor(Doctor doctor);
+     Doctor modificarDoctor(Doctor doctor);
+     Doctor deleteDoctor(String colegiado);
 }

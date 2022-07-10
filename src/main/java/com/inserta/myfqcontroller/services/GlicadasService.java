@@ -12,6 +12,6 @@ public interface GlicadasService {
      List<Glicada> getGlicadasByDni(String dni);
      List<Glicada> getGlicadasByDniAndFecha(String dni, Date fecha);
      List<Glicada> findAllByFechaBetween(Date desde, Date hasta);
-     List<Glicada> findAllByPacienteIdUsuarioAndFecha(String idUsuario, Date fecha);
+     List<Glicada> findAllByPacienteIdUsuarioAndFecha(int idUsuario, Date fecha);
 
 }

@@ -16,9 +16,9 @@ import java.util.List;
 public interface DatosRespiratoriosRepo extends JpaRepository<DatoRespiratorio, Integer> {
     public List<DatoRespiratorio> findAllByPaciente_Dni(String dni);
     public List<DatoRespiratorio> findByPaciente_DniAndFecha(String dni, Date fecha);
-    public List<DatoRespiratorio> findAllByPaciente_IdUsuarioAndFechaBetween(String idUsuario ,Date desde, Date hasta);
+    public List<DatoRespiratorio> findAllByPaciente_IdUsuarioAndFechaBetween(int idUsuario ,Date desde, Date hasta);
      public List<DatoRespiratorio> findAllByPaciente_DniAndFecha(String dni, Date fecha);
-    public List<DatoRespiratorio> findAllByPaciente_IdUsuarioEqualsAndFecha(String idUsuario, Date fecha);
-    public List<DatoRespiratorio> findAllByPaciente_IdUsuario(String idUsuario);
+    public List<DatoRespiratorio> findAllByPaciente_IdUsuarioEqualsAndFecha(int idUsuario, Date fecha);
+    public List<DatoRespiratorio> findAllByPaciente_IdUsuario(int idUsuario);
 
 }

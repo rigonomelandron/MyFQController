@@ -22,7 +22,7 @@ public class Doctor {
     private String nombre;
     private String email;
 
-    private String idUsuario;
+    private int idUsuario;
 
 
 }

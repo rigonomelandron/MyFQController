@@ -7,8 +7,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface UsuariosService {
-   Usuario usuarioById(String id);
+   Usuario usuarioById( int id);
    List<Usuario> listado();
-   Usuario usuario(String usuario, String password);
+
    Usuario crearUsuario(Usuario usuario);
+
+   Usuario usuarioByUser(String user);
 }

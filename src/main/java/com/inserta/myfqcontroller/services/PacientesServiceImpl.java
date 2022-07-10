@@ -22,7 +22,7 @@ public class PacientesServiceImpl implements PacientesService{
     }
 
     @Override
-    public Paciente getPacienteByIdUsuario(String username) {
+    public Paciente getPacienteByIdUsuario(int username) {
         return pacientesRepo.findByIdUsuario(username);
     }
 

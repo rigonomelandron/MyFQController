@@ -9,4 +9,5 @@ public interface EquiposService {
      Equipo getEquiposById(Integer id);
      List<Equipo> getEquiposByIdMedico(String idMedico);
      Equipo getEquiposByIdPaciente(String id);
+     Equipo saveEquipo(Equipo equipo);
 }

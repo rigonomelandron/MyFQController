@@ -17,6 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin(origins = "*")
 public class DatosRespiratorioController {
     @Autowired
     DatosRespiratoriosService datosRespiratoriosService;
@@ -43,13 +44,13 @@ public class DatosRespiratorioController {
         return datosRespiratoriosService.getDatoRespiratorioById(idI);
     }
     @GetMapping("/datos-respiratorios/fechas/{idUsuario}/{desde}/{hasta}")
-    public  List<DatoRespiratorio> findAllByFechaBetween(@PathVariable String idUsuario, @PathVariable Date desde, @PathVariable  Date hasta)  {
+    public  List<DatoRespiratorio> findAllByFechaBetween(@PathVariable Integer idUsuario, @PathVariable Date desde, @PathVariable  Date hasta)  {
         return datosRespiratoriosService.findAllByFechaBetween( idUsuario,desde,hasta);
     }
 
 
     @GetMapping("/datos-respiratorios/idUsuario/{idUsuario}/{fecha}")
-    public List<DatoRespiratorio> findAllByPacienteIdUsuario(@PathVariable String idUsuario, @PathVariable Date fecha)  {
+    public List<DatoRespiratorio> findAllByPacienteIdUsuario(@PathVariable Integer idUsuario, @PathVariable Date fecha)  {
 
         System.out.println(fecha);
         return datosRespiratoriosService.findAllByPacienteIdUsuarioFecha(idUsuario ,fecha);
@@ -58,8 +59,8 @@ public class DatosRespiratorioController {
     public DatoRespiratorio createDatoRespiratorio(@RequestBody DatoRespiratorio datoRespiratorio){
         return datosRespiratoriosService.crearDatoRespiratorio(datoRespiratorio);
     }
-    @GetMapping("/datos-respiratorios/usuarioId/{idUsuario}")
-    public List<DatoRespiratorio> getByIdUsuario(@PathVariable String idUsuario){
-        return datosRespiratoriosService.getByIdUsuario(idUsuario);
+    @GetMapping("/datos-respiratorios/usuarioId/{id}")
+    public List<DatoRespiratorio> getByIdUsuario(@PathVariable Integer id){
+        return datosRespiratoriosService.getByIdUsuario(id);
     }
 }

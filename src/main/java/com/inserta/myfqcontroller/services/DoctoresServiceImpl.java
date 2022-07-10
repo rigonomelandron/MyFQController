@@ -22,7 +22,23 @@ public class DoctoresServiceImpl implements DoctoresService{
     }
 
     @Override
-    public Doctor getDoctorByIdUsuario(String idUsuario) {
+    public Doctor getDoctorByIdUsuario(int idUsuario) {
         return doctoresRepo.findByIdUsuario(idUsuario);
     }
+
+    @Override
+    public Doctor saveDoctor(Doctor doctor) {
+        return doctoresRepo.save(doctor);
+    }
+
+    @Override
+    public Doctor modificarDoctor(Doctor doctor) {
+        return doctoresRepo.save(doctor);
+    }
+
+    @Override
+    public Doctor deleteDoctor( String colegiado) {
+        return doctoresRepo.deleteByNumColegiado(colegiado);
+    }
+
 }

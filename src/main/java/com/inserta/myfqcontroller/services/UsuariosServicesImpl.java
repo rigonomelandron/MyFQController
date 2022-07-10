@@ -1,9 +1,10 @@
 package com.inserta.myfqcontroller.services;
 
 import com.inserta.myfqcontroller.models.Usuario;
-import com.inserta.myfqcontroller.repos.UsuariosRepos;
+import com.inserta.myfqcontroller.security.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -11,10 +12,10 @@ import java.util.List;
 public class UsuariosServicesImpl implements  UsuariosService{
 
     @Autowired
-    private UsuariosRepos usuariosRepos;
+    private UsuarioRepository usuariosRepos;
 
     @Override
-    public Usuario usuarioById(String usuario) {
+    public Usuario usuarioById(int usuario) {
         return usuariosRepos.findById(usuario).orElse(null);
     }
 
@@ -23,13 +24,15 @@ public class UsuariosServicesImpl implements  UsuariosService{
         return usuariosRepos.findAll();
     }
 
-    @Override
-    public Usuario usuario(String usuario, String password) {
-        return usuariosRepos.findByUsuarioAndPass(usuario,password);
-    }
+
 
     @Override
     public Usuario crearUsuario(Usuario usuario) {
         return usuariosRepos.save(usuario);
+    }
+
+    @Override
+    public Usuario usuarioByUser(String user) {
+        return usuariosRepos.findByNombreUsuario(user).orElse(null);
     }
 }

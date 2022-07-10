@@ -15,6 +15,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin(origins = "*")
 public class AntecedentesController {
     @Autowired
     AntecedentesService antecedentesService;
@@ -40,7 +41,7 @@ public class AntecedentesController {
         return antecedentesService.getAntecedenteById(idI);
     }
     @GetMapping("/antecedentes/idUsuario/{idUsuario}/{fecha}")
-    public List<Antecedente> getAntecedentesByIdUsuarioAndFecha(@PathVariable String idUsuario, @PathVariable Date fecha)  {
+    public List<Antecedente> getAntecedentesByIdUsuarioAndFecha(@PathVariable Integer idUsuario, @PathVariable Date fecha)  {
 
         return antecedentesService.getAntecedentesByIdUsuarioAndFecha(idUsuario, fecha);
     }

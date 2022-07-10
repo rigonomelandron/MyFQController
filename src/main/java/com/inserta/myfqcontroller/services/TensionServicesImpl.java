@@ -40,7 +40,7 @@ public class TensionServicesImpl implements TensionService{
     }
 
     @Override
-    public List<Tension> findAllByPaciente_IdUsuarioAndFecha(String idUsuario, Date fecha) {
+    public List<Tension> findAllByPaciente_IdUsuarioAndFecha(int idUsuario, Date fecha) {
         return tensionesRepos.findAllByPaciente_IdUsuarioAndFecha(idUsuario,fecha);
     }
 }

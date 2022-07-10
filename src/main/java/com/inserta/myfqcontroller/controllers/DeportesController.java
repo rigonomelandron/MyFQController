@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1")
+@CrossOrigin(origins = "*")
 public class DeportesController {
 
     @Autowired
@@ -44,7 +45,7 @@ public class DeportesController {
     }
 
     @GetMapping ("/deportes/idUsuario/{idUsuario}/{fecha}")
-    public List<Deporte> deporteByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
+    public List<Deporte> deporteByIdUsuarioFecha(@PathVariable Integer idUsuario, @PathVariable Date fecha) {
 
         return deportesService.deportesByIdUsuarioFecha(idUsuario, fecha);
     }

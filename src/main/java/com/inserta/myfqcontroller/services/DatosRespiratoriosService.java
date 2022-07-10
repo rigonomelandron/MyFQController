@@ -13,10 +13,10 @@ public interface DatosRespiratoriosService {
      List<DatoRespiratorio> getDatosRespiratoriosByDni(String dni);
      List<DatoRespiratorio> getDatosRespiratoriosByDniAndFecha(String dni, Date fecha);
      DatoRespiratorio getDatoRespiratorioById(Integer id);
-     List<DatoRespiratorio> findAllByFechaBetween(String idUsuario, Date desde, Date hasta);
-     List<DatoRespiratorio> findAllByPacienteIdUsuarioFecha(String idUsuario, Date fecha) ;
+     List<DatoRespiratorio> findAllByFechaBetween(int idUsuario, Date desde, Date hasta);
+     List<DatoRespiratorio> findAllByPacienteIdUsuarioFecha(int idUsuario, Date fecha) ;
 
      DatoRespiratorio crearDatoRespiratorio(DatoRespiratorio datoRespiratorio);
-     List<DatoRespiratorio> getByIdUsuario(String idUsuario);
+     List<DatoRespiratorio> getByIdUsuario(int id);
 
 }

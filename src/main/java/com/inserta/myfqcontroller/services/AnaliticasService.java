@@ -10,7 +10,7 @@ public interface AnaliticasService {
      Analitica getAnaliticasById(Integer id);
      List<Analitica> getAnaliticasByDni(String dni);
      List<Analitica> getAnaliticasByDniAndFecha(String dni, Date fecha);
-     List<Analitica> getAnaliticasByIdUsuarioFecha(String idUsuario, Date fecha);
+     List<Analitica> getAnaliticasByIdUsuarioFecha(int idUsuario, Date fecha);
         Analitica crearAnalitica(Analitica analitica);
 
 }

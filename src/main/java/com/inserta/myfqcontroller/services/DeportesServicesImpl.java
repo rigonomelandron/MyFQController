@@ -36,9 +36,11 @@ public class DeportesServicesImpl implements DeportesService{
     }
 
     @Override
-    public List<Deporte> deportesByIdUsuarioFecha(String idUsuario, Date fecha) {
+    public List<Deporte> deportesByIdUsuarioFecha(int idUsuario, Date fecha) {
         return deportesRepo.findByPaciente_IdUsuarioAndFecha(idUsuario,fecha);
     }
+
+
 
     @Override
     public Deporte addDeporte(Deporte deporte) {

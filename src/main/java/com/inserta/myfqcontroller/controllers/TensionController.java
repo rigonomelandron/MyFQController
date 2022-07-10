@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1")
+@CrossOrigin(origins = "*")
 public class TensionController {
 
     @Autowired
@@ -57,7 +58,7 @@ public class TensionController {
         return tension;
     }
     @GetMapping("/tension/idUsuario/{idUsuario}/{fecha}")
-    public List<Tension> getByIdUsuarioAndDate(@PathVariable String idUsuario, @PathVariable Date fecha)  {
+    public List<Tension> getByIdUsuarioAndDate(@PathVariable Integer idUsuario, @PathVariable Date fecha)  {
 
         return tensionService.findAllByPaciente_IdUsuarioAndFecha(idUsuario, fecha);
     }

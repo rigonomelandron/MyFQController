@@ -4,10 +4,7 @@ package com.inserta.myfqcontroller.controllers;
 import com.inserta.myfqcontroller.models.Glicada;
 import com.inserta.myfqcontroller.services.GlicadasService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,6 +14,7 @@ import java.util.List;
 
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin(origins = "*")
 public class GlicadasController {
 
     @Autowired
@@ -53,7 +51,7 @@ public class GlicadasController {
 
     }
     @GetMapping("/glicadas/idUsuario/{idUsuario}/{fecha}")
-    public List<Glicada> findAllByIdUsuarioAndFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
+    public List<Glicada> findAllByIdUsuarioAndFecha(@PathVariable Integer idUsuario, @PathVariable Date fecha) {
 
         return glicadasService.findAllByPacienteIdUsuarioAndFecha(idUsuario, fecha);
     }

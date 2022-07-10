@@ -12,6 +12,7 @@ import java.util.List;
 
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin(origins = "*")
 public class PacientesController {
 
 
@@ -31,7 +32,7 @@ public class PacientesController {
     }
 
     @GetMapping("/pacientes/userName/{username}")
-    public Paciente pacienteByUserName(@PathVariable String username){
+    public Paciente pacienteByUserName(@PathVariable int username){
         return pacientesService.getPacienteByIdUsuario(username);
 
     }

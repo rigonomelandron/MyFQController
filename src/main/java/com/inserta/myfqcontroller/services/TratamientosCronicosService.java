@@ -15,6 +15,6 @@ public interface TratamientosCronicosService {
     TratamientoCronico tratamientoById(int id);
     List<TratamientoCronico> tratamientoByDni(String dni);
     List<TratamientoCronico> tratamientoByDniFecha(String dni, Date fecha);
-    List<TratamientoCronico> tratamientoByIdUsuarioFecha(String idUsuario, Date fechaInicio);
+    List<TratamientoCronico> tratamientoByIdUsuarioFecha(int idUsuario, Date fechaInicio);
     TratamientoCronico crearTratamientoCronico(TratamientoCronico tratamientoCronico);
 }

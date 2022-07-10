@@ -31,6 +31,7 @@ import java.util.*;
 
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin(origins = "*")
 public class AnaliticaController {
     @Autowired
     private AnaliticasService analiticasService;
@@ -59,7 +60,7 @@ public class AnaliticaController {
         return analiticasService.getAnaliticasByDniAndFecha(dni, date);
     }
     @GetMapping("/analiticas/idUsuarioFecha/{idUsuario}/{fecha}")
-    public List<Analitica> analiticasByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fecha) {
+    public List<Analitica> analiticasByIdUsuarioFecha(@PathVariable Integer idUsuario, @PathVariable Date fecha) {
         return analiticasService.getAnaliticasByIdUsuarioFecha(idUsuario, fecha);
     }
 

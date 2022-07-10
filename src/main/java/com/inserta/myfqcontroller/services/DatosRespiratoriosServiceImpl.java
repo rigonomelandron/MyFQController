@@ -39,12 +39,12 @@ public class DatosRespiratoriosServiceImpl implements DatosRespiratoriosService{
     }
 
     @Override
-    public List<DatoRespiratorio> findAllByFechaBetween(String idUsuario,Date desde, Date hasta) {
+    public List<DatoRespiratorio> findAllByFechaBetween(int idUsuario,Date desde, Date hasta) {
         return datosRespiratoriosRepo.findAllByPaciente_IdUsuarioAndFechaBetween(idUsuario,desde, hasta);
     }
 
     @Override
-    public List<DatoRespiratorio> findAllByPacienteIdUsuarioFecha(String idUsuario, Date fecha) {
+    public List<DatoRespiratorio> findAllByPacienteIdUsuarioFecha(int idUsuario, Date fecha) {
 
         return datosRespiratoriosRepo.findAllByPaciente_IdUsuarioEqualsAndFecha(idUsuario, fecha);
     }
@@ -55,8 +55,8 @@ public class DatosRespiratoriosServiceImpl implements DatosRespiratoriosService{
     }
 
     @Override
-    public List<DatoRespiratorio> getByIdUsuario(String idUsuario) {
-        return datosRespiratoriosRepo.findAllByPaciente_IdUsuario(idUsuario);
+    public List<DatoRespiratorio> getByIdUsuario(int id) {
+        return datosRespiratoriosRepo.findAllByPaciente_IdUsuario(id);
     }
 
 

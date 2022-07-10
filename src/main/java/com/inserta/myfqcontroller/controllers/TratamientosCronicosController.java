@@ -28,6 +28,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("api/v1")
+@CrossOrigin(origins = "*")
 public class TratamientosCronicosController {
 
     @Autowired
@@ -57,7 +58,7 @@ public class TratamientosCronicosController {
     }
 
     @GetMapping("/tratamientos/idUsuario/{idUsuario}/{fechaInicio}")
-    public List<TratamientoCronico> tratamientoByIdUsuarioFecha(@PathVariable String idUsuario, @PathVariable Date fechaInicio) {
+    public List<TratamientoCronico> tratamientoByIdUsuarioFecha(@PathVariable Integer idUsuario, @PathVariable Date fechaInicio) {
         return tratamientosCronicosService.tratamientoByIdUsuarioFecha(idUsuario, fechaInicio);
     }
     @PostMapping("/tratamiento")

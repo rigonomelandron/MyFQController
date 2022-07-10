@@ -15,5 +15,5 @@ public interface V02maxService {
     V02max tensionById(int id);
     List<V02max> tensionByDni(String dni);
     List<V02max> tensionByDniFecha(String dni, Date fecha);
-    List<V02max> tensionByIdUsuarioFecha(String idUsuario, Date fecha);
+    List<V02max> tensionByIdUsuarioFecha(int idUsuario, Date fecha);
 }

@@ -33,4 +33,9 @@ public class EquiposServiceImpl implements EquiposService{
     public Equipo getEquiposByIdPaciente(String id) {
         return equiposRepo.findByIdPaciente(id);
     }
+
+    @Override
+    public Equipo saveEquipo(Equipo equipo) {
+        return equiposRepo.save(equipo);
+    }
 }

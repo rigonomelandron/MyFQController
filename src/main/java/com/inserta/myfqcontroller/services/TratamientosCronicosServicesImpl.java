@@ -35,7 +35,7 @@ public class TratamientosCronicosServicesImpl implements TratamientosCronicosSer
     }
 
     @Override
-    public List<TratamientoCronico> tratamientoByIdUsuarioFecha(String idUsuario, Date fechaInicio) {
+    public List<TratamientoCronico> tratamientoByIdUsuarioFecha(int idUsuario, Date fechaInicio) {
         return tratamientosCronicosRepos.findByPaciente_idUsuarioAndFecha(idUsuario,fechaInicio);
     }
 

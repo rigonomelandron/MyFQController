@@ -13,5 +13,5 @@ import java.util.List;
 public interface  AnaliticasRepo extends JpaRepository<Analitica, Integer> {
     public List<Analitica> findByPaciente_Dni(String dni);
     public List<Analitica> findByPaciente_DniAndFecha(String dni, Date fecha);
-    List<Analitica> findAllByPaciente_IdUsuarioEqualsAndFecha(String idUsuario, Date fecha);
+    List<Analitica> findAllByPaciente_IdUsuarioEqualsAndFecha(int idUsuario, Date fecha);
 }

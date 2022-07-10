@@ -24,5 +24,5 @@ public class Paciente {
     private double altura;
     private String mutacion1;
     private String mutacion2;
-    private String idUsuario;
+    private int idUsuario;
 }

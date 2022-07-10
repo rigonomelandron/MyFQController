@@ -13,7 +13,7 @@ public interface AntecedentesService {
      List<Antecedente> getAntecedentes();
      List<Antecedente> getAntecedentesByDni(String dni);
      List<Antecedente> getAntecedentesByDniAndFecha(String dni, Date fecha);
-     List<Antecedente> getAntecedentesByIdUsuarioAndFecha(String idUsuario, Date fecha);
+     List<Antecedente> getAntecedentesByIdUsuarioAndFecha(int idUsuario, Date fecha);
      Antecedente crearAntecedente(Antecedente antecedente);
 
 }

@@ -34,7 +34,7 @@ public class V02maxServicesImpl implements  V02maxService{
     }
 
     @Override
-    public List<V02max> tensionByIdUsuarioFecha(String idUsuario, Date fecha) {
+    public List<V02max> tensionByIdUsuarioFecha(int idUsuario, Date fecha) {
         return v02maxRepos.findByPaciente_IdUsuarioAndFecha(idUsuario, fecha);
     }
 }

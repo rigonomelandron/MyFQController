@@ -16,6 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin(origins = "*")
 public class CiclosAntibioticoController {
     @Autowired
     CiclosAntibioticoService ciclosAntibioticoService;
@@ -48,7 +49,7 @@ public class CiclosAntibioticoController {
     }
 
     @GetMapping("/ciclosAntibioticos/idUsuario/{idUsuario}/{fecha}")
-    public List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(@PathVariable String idUsuario, @PathVariable Date fecha)  {
+    public List<CicloAntibiotico> getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(@PathVariable Integer idUsuario, @PathVariable Date fecha)  {
 
         return ciclosAntibioticoService.getCiclosAntibioticoByPaciente_IdUsuarioAndFechaInicio(idUsuario, fecha);
     }

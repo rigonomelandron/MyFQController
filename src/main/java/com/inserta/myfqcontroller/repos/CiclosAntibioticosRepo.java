@@ -15,5 +15,5 @@ public interface CiclosAntibioticosRepo extends JpaRepository<CicloAntibiotico, 
     public List<CicloAntibiotico> findByPaciente_Dni(String dni);
     public List<CicloAntibiotico> findByPaciente_DniAndFechaInicio(String dni, Date fecha);
     public List<CicloAntibiotico> findByEsIntravenosoTrue();
-    public List<CicloAntibiotico> findByPaciente_IdUsuarioAndFechaInicio(String dni, Date fecha);
+    public List<CicloAntibiotico> findByPaciente_IdUsuarioAndFechaInicio(int idUsuario, Date fecha);
 }
